@@ -2,6 +2,8 @@ project(pd_ndi_main)
 
 set(SRC_FILES
         NDISender.cpp
+        NDISenderC.cpp
+        pd-ndi.c
         )
 
 add_library(pd-ndi ${SRC_FILES})

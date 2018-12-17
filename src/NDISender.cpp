@@ -2,7 +2,7 @@
 // Created by Bartek on 24.11.2018.
 //
 
-#include "NDISender.h"
+#include "NDISender.hpp"
 #include <iostream>
 #include <thread>
 #include <GL/gl.h>
