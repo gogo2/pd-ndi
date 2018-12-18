@@ -13,9 +13,12 @@ extern "C" {
 struct NDISenderC;
 typedef struct NDISenderC NDISenderC;
 
-int NDISender_create();
-void NDISender_destroy();
-void NDISender_send_frame(void *frame);
+NDISenderC *NDISender_create(int screen_width, int screen_height);
+void NDISender_destroy(NDISenderC *sender_ptr);
+void NDISender_send_frame(NDISenderC *sender_ptr);
+void *NDISender_p_data(NDISenderC *sender_ptr);
+void NDISender_resize_frame(NDISenderC *sender_ptr, int screen_width, int screen_height);
+void NDISender_set_framerate(NDISenderC *sender_ptr, int max_fps);
 
 #ifdef __cplusplus
 }

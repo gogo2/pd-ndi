@@ -9,7 +9,7 @@
 
 class NDISender final {
 public:
-    NDISender(int screen_width, int screen_height, int max_fps);
+    NDISender(int screen_width, int screen_height, int max_fps = 30);
 
     NDISender() = delete;
 
@@ -28,6 +28,8 @@ public:
     void *p_data();
 
     void resize_screen(int screen_width, int screen_height);
+
+    void set_framerate(int max_fps);
 
 private:
 

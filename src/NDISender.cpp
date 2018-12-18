@@ -8,7 +8,7 @@
 #include <GL/gl.h>
 
 
-NDISender::NDISender(int screen_width, int screen_height, int max_fps = 30) : pNDI_send_(nullptr), NDI_video_frame_{} {
+NDISender::NDISender(int screen_width, int screen_height, int max_fps) : pNDI_send_(nullptr), NDI_video_frame_{} {
     if (!NDIlib_initialize()) {
         std::cerr << "Error initializing NDI\n";
     }
@@ -42,4 +42,8 @@ void NDISender::resize_screen(int screen_width, int screen_height) {
     NDI_video_frame_.xres = screen_width;
     NDI_video_frame_.yres = screen_height;
     realloc(NDI_video_frame_.p_data, static_cast<unsigned>(NDI_video_frame_.xres * NDI_video_frame_.yres * 4));
+}
+
+void NDISender::set_framerate(int max_fps) {
+    NDI_video_frame_.frame_rate_N = max_fps;
 }
