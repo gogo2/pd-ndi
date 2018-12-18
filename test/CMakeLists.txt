@@ -1,7 +1,7 @@
-project(pd_ndi_test)
+project(pd_ndi_test C)
 
 set(SRC_FILES
-        main.cpp
+        main.c
         )
 
 add_executable(pd-ndi-test ${SRC_FILES})

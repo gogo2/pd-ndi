@@ -25,11 +25,11 @@ public:
 
     void send_frame();
 
-    void *p_data();
+    void *p_data() noexcept;
 
-    void resize_screen(int screen_width, int screen_height);
+    void resize_screen(int screen_width, int screen_height) noexcept;
 
-    void set_framerate(int max_fps);
+    void set_framerate(int max_fps) noexcept;
 
 private:
 
