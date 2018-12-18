@@ -6,7 +6,7 @@ set(SRC_FILES
         pd-ndi.c
         )
 
-add_library(pd-ndi ${SRC_FILES})
+add_library(pd-ndi SHARED ${SRC_FILES})
 
 target_link_libraries(pd-ndi PRIVATE Processing.NDI.Lib.x64)
 
