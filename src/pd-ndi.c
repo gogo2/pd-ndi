@@ -21,7 +21,7 @@ void *ndisender_new(void) {
 }
 
 void ndisender_setup(void) {
-    ndisender_class = class_new(gensym("helloworld"), (t_newmethod) ndisender_new, 0, sizeof(t_ndisender),
+    ndisender_class = class_new(gensym("ndisender"), (t_newmethod) ndisender_new, 0, sizeof(t_ndisender),
                                 CLASS_DEFAULT, 0);
     class_addbang(ndisender_class, ndisender_bang);
 }
