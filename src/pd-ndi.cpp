@@ -44,9 +44,6 @@ void pd_ndi_set_framerate(t_pd_ndi *x, t_floatarg max_fps) {
 }
 
 void pd_ndi_send_framebuffer(t_pd_ndi *x, t_floatarg fbo) {
-    char buff[10];
-    itoa((int) (fbo), buff, 10);
-    post(buff);
     x->ndi_connector->send_framebuffer((int) fbo);
 }
 
