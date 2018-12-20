@@ -8,8 +8,10 @@
 #include <memory.h>
 #include "../src/NDISenderC.h"
 
-int main() {
+extern void pd_ndi_setup();
 
+int main() {
+    pd_ndi_setup();
     NDISenderC *sender = NDISender_create(800, 600);
 
 

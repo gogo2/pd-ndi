@@ -6,7 +6,7 @@ set(SRC_FILES
 
 add_executable(pd-ndi-test ${SRC_FILES})
 
-target_link_libraries(pd-ndi-test pd-ndi)
+target_link_libraries(pd-ndi-test pd_ndi pd)
 
 
 
