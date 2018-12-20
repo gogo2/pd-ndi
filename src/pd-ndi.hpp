@@ -28,7 +28,7 @@ public:
 
     ~PdGlNdiConnector() = default;
 
-    void send_framebuffer(int fbo);
+    void send_framebuffer(int tex);
 
     void bang();
 

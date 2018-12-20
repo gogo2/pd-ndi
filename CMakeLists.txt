@@ -12,4 +12,4 @@ link_directories(${PROJECT_SOURCE_DIR}/../_lib/lib)
 
 add_subdirectory(src)
 add_subdirectory(test)
-add_subdirectory(lib/glad)
+add_subdirectory(lib/glew)

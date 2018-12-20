@@ -6,7 +6,7 @@
 
 #include <memory.h>
 #include <stdlib.h>
-#include "glad/glew.h"
+#include "glew/glew.h"
 #include "m_pd.h"
 #include "pd-ndi.hpp"
 
@@ -85,14 +85,9 @@ void PdGlNdiConnector::set_framerate(int max_fps) noexcept {
     ndi_sender_.set_framerate(max_fps);
 }
 
-void PdGlNdiConnector::send_framebuffer(int fbo) {
-    char buff[800 * 600 * 4];
-    itoa((fbo), buff, 10);
-    post(buff);
-//    glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, (GLuint)fbo);
-    glReadPixels(0, 0, 800, 600, GL_RGBA, GL_UNSIGNED_BYTE, ndi_sender_.p_data());
+void PdGlNdiConnector::send_framebuffer(int tex) {
+    glBindTexture(GL_TEXTURE_2D, (GLuint) tex);
+    glGetTexImage(GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE, ndi_sender_.p_data());
     ndi_sender_.send_frame();
-
-    glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, 0);
 }
 
