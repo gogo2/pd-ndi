@@ -7,17 +7,40 @@
 #define PD_NDI_SS_HPP
 
 
-extern "C" void pd_ndi_setup();
+#include "NDISender.hpp"
 
+struct _pd_ndi;
 
 class PdGlNdiConnector {
 public:
-    int i = 5;
-private:
-//    NDISender ndi_sender;
+    explicit PdGlNdiConnector(_pd_ndi *pd_ndi);
 
+    PdGlNdiConnector() = delete;
+
+    PdGlNdiConnector(const PdGlNdiConnector &) = delete;
+
+    PdGlNdiConnector(const PdGlNdiConnector &&) = delete;
+
+    PdGlNdiConnector &operator=(const PdGlNdiConnector &) = delete;
+
+    PdGlNdiConnector &operator=(const PdGlNdiConnector &&) = delete;
+
+    ~PdGlNdiConnector() = default;
+
+    void bang();
+
+private:
+    _pd_ndi *const pd_ndi_;
+    NDISender ndi_sender_;
 
 };
+
+typedef struct _pd_ndi {
+    t_object x_obj;
+
+    PdGlNdiConnector *ndi_connector;
+
+} t_pd_ndi;
 
 
 #endif //PD_NDI_SS_HPP

@@ -2,7 +2,7 @@ project(pd_ndi_main)
 
 set(SRC_FILES
         NDISender.cpp
-        NDISenderC.cpp
+        #        NDISenderC.cpp
         pd-ndi.cpp
         )
 
