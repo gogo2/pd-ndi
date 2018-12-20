@@ -4,7 +4,6 @@ project(pd_ndi VERSION 0.0.1)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -pedantic -Wall -static-libgcc -static-libstdc++ ")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
 
 set(CMAKE_CXX_STANDARD 17)
 include_directories(${PROJECT_SOURCE_DIR}/lib/)
@@ -13,3 +12,4 @@ link_directories(${PROJECT_SOURCE_DIR}/../_lib/lib)
 
 add_subdirectory(src)
 add_subdirectory(test)
+add_subdirectory(lib/glad)

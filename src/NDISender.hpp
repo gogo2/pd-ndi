@@ -2,8 +2,8 @@
 // Created by Bartek on 24.11.2018.
 //
 
-#ifndef PROJECT_H_NDISENDER_H
-#define PROJECT_H_NDISENDER_H
+#ifndef PROJECT_H_NDISENDER_HPP
+#define PROJECT_H_NDISENDER_HPP
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
@@ -44,4 +44,4 @@ private:
 };
 
 
-#endif //PROJECT_H_NDISENDER_H
+#endif //PROJECT_H_NDISENDER_HPP

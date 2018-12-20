@@ -3,8 +3,8 @@
 // Created by Bartek
 //
 
-#ifndef PD_NDI_SS_HPP
-#define PD_NDI_SS_HPP
+#ifndef PD_NDI_HPP
+#define PD_NDI_HPP
 
 
 #include "NDISender.hpp"
@@ -28,7 +28,13 @@ public:
 
     ~PdGlNdiConnector() = default;
 
+    void send_framebuffer(int fbo);
+
     void bang();
+
+    void resize_screen(int screen_width, int screen_height) noexcept;
+
+    void set_framerate(int max_fps) noexcept;
 
 private:
     t_pd_ndi *const pd_ndi_;
@@ -44,4 +50,4 @@ struct _pd_ndi {
 };
 
 
-#endif //PD_NDI_SS_HPP
+#endif //PD_NDI_HPP
