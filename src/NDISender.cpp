@@ -4,8 +4,6 @@
 
 #include "NDISender.hpp"
 #include <iostream>
-#include <thread>
-#include <GL/gl.h>
 
 
 NDISender::NDISender(const int screen_width, const int screen_height, const int max_fps) : pNDI_send_(nullptr),

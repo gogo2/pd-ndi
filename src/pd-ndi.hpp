@@ -10,10 +10,11 @@
 #include "NDISender.hpp"
 
 struct _pd_ndi;
+typedef _pd_ndi t_pd_ndi;
 
 class PdGlNdiConnector {
 public:
-    explicit PdGlNdiConnector(_pd_ndi *pd_ndi);
+    explicit PdGlNdiConnector(t_pd_ndi *pd_ndi);
 
     PdGlNdiConnector() = delete;
 
@@ -30,17 +31,17 @@ public:
     void bang();
 
 private:
-    _pd_ndi *const pd_ndi_;
+    t_pd_ndi *const pd_ndi_;
     NDISender ndi_sender_;
 
 };
 
-typedef struct _pd_ndi {
+struct _pd_ndi {
     t_object x_obj;
 
     PdGlNdiConnector *ndi_connector;
 
-} t_pd_ndi;
+};
 
 
 #endif //PD_NDI_SS_HPP

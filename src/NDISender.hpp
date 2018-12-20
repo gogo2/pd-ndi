@@ -5,7 +5,12 @@
 #ifndef PROJECT_H_NDISENDER_H
 #define PROJECT_H_NDISENDER_H
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
 #include <NDI/Processing.NDI.Lib.h>
+
+#pragma GCC diagnostic pop
 
 class NDISender final {
 public:

@@ -8,18 +8,18 @@
 
 static t_class *pd_ndi_class;
 
-void ndisender_bang(t_pd_ndi *x) {
-    x->ndi_connector->bang();
-}
-
 void *pd_ndi_new() {
     auto *pd_ndi = (t_pd_ndi *) pd_new(pd_ndi_class);
     pd_ndi->ndi_connector = new PdGlNdiConnector(pd_ndi);
-    return (void *) pd_ndi;
+    return static_cast<void *>(pd_ndi);
 }
 
 void pd_ndi_delete(t_pd_ndi *pd_ndi) {
     delete pd_ndi->ndi_connector;
+}
+
+void pd_ndi_bang(t_pd_ndi *x) {
+    x->ndi_connector->bang();
 }
 
 extern "C" void pd_ndi_setup() {
@@ -32,13 +32,12 @@ extern "C" void pd_ndi_setup() {
             CLASS_DEFAULT,
             A_GIMME,
             0);
-    class_addbang(pd_ndi_class, ndisender_bang);
+    class_addbang(pd_ndi_class, pd_ndi_bang);
 }
 
-PdGlNdiConnector::PdGlNdiConnector(_pd_ndi *const pd_ndi) : pd_ndi_(pd_ndi), ndi_sender_{800, 600} {
+PdGlNdiConnector::PdGlNdiConnector(t_pd_ndi *const pd_ndi) : pd_ndi_(pd_ndi), ndi_sender_{800, 600} {
     post("connector created");
 }
-
 
 void PdGlNdiConnector::bang() {
     for (int i = 0; i < 300; ++i) {
