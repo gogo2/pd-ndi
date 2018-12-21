@@ -1,5 +1,6 @@
 //
-// Created by Bartek on 24.11.2018.
+// file NDISender.hpp
+// Created by Bartosz Sobol
 //
 
 #ifndef PROJECT_H_NDISENDER_HPP

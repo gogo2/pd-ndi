@@ -1,6 +1,6 @@
 //
 // file NDISenderC.h
-// Created by Bartek
+// Created by Bartosz Sobol
 //
 
 #ifndef PD_NDI_NDISENDERC_H

@@ -1,6 +1,6 @@
 //
-// file pd-ndi.c
-// Created by Bartek
+// file pd-ndi.cpp
+// Created by Bartosz Sobol
 //
 #define GLEW_STATIC
 

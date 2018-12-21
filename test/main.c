@@ -1,5 +1,5 @@
 //
-// file main.cpp
+// file main.c
 // Created by Bartek
 //
 

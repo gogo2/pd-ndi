@@ -1,6 +1,6 @@
 //
-// file NDISenderC.c
-// Created by Bartek
+// file NDISenderC.cpp
+// Created by Bartosz Sobol
 //
 
 #include "NDISender.hpp"

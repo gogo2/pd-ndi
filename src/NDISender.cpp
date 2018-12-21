@@ -1,5 +1,6 @@
 //
-// Created by Bartek on 24.11.2018.
+// file NDISender.cpp
+// Created by Bartosz Sobol
 //
 
 #include "NDISender.hpp"
