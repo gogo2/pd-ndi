@@ -11,9 +11,9 @@ find_package(OpenGL)
 
 set_target_properties(pd_ndi PROPERTIES PREFIX "")
 target_link_libraries(pd_ndi PRIVATE
-        Processing.NDI.Lib.x86
         pd_ndi_glew
         ${OPENGL_gl_LIBRARY}
+        Processing.NDI.Lib.x86
         pd
         )
 
