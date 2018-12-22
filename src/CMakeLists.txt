@@ -13,8 +13,8 @@ set_target_properties(pd_ndi PROPERTIES PREFIX "")
 target_link_libraries(pd_ndi PRIVATE
         pd_ndi_glew
         ${OPENGL_gl_LIBRARY}
-        Processing.NDI.Lib.x86
-        pd
+        ${NDI_LIB_NAME}
+        ${PD_LIB_NAME}
         )
 
 
