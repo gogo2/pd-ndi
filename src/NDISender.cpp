@@ -47,3 +47,11 @@ void NDISender::resize_screen(const int screen_width, const int screen_height) n
 void NDISender::set_framerate(const int max_fps) noexcept {
     NDI_video_frame_.frame_rate_N = max_fps;
 }
+
+int NDISender::width() {
+    return NDI_video_frame_.xres;
+}
+
+int NDISender::height() {
+    return NDI_video_frame_.yres;
+}

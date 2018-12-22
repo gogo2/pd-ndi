@@ -37,6 +37,10 @@ public:
 
     void set_framerate(int max_fps) noexcept;
 
+    int width();
+
+    int height();
+
 private:
 
     NDIlib_send_instance_t pNDI_send_;

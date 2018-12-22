@@ -33,7 +33,8 @@ void pd_ndi_delete(t_pd_ndi *pd_ndi) {
 void pd_ndi_bang(t_pd_ndi *pd_ndi) {
     for (int i = 0; i < 30; ++i) {
         pd_ndi->ndi_sender->send_frame();
-        memset(pd_ndi->ndi_sender->p_data(), (i & 1) ? 255 : 0, 800 * 600 * 4);
+        memset(pd_ndi->ndi_sender->p_data(), (i & 1) ? 255 : 0,
+               (unsigned) pd_ndi->ndi_sender->width() * pd_ndi->ndi_sender->height() * 4);
     }
 }
 
