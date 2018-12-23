@@ -4,23 +4,21 @@ __pd-ndi__ is a Pure Data extensions that enables video transmission through NDI
 
 
 [__Newtek NDI__](https://www.newtek.com/ndi/) (Network Device Interface) 
-is a software standard for broadcasting high quality video and audio with low latency over network.
-
+is a software standard for broadcasting high quality video and audio over network with low latency.
 
 ### Compilation and installation
 
-#####Requirements
+##### Requirements
 * Building process of pd-ndi is managed by [CMake](https://cmake.org/)
-* Pd-ndi depends on Newtek NDI SDK which can be downloaded for free form [here](https://www.newtek.com/ndi/sdk/).
+* Pd-ndi depends on Newtek NDI SDK which can be downloaded for free form [here](https://www.newtek.com/ndi/sdk/)
 
 ##### Compilation
-* In main _CMakeLists.txt_ file edit configuration variables so that neccessary libraries and headers can be found durong compilation
+* In main _CMakeLists.txt_ file edit configuration variables so that neccessary libraries and headers can be found durig compilation
 * Execute following commands in root directory of pd-ndi:
-
-```$xslt
-cmake .
-make
-```
+    ```$xslt
+    cmake .
+    make
+    ```
 
 
 ##### Installation
@@ -34,7 +32,11 @@ make
 
 ### Usage
 
-(__Note__: pd-ndi's main purpose is to be used with Gem's _gemframebuffer_ object, but implementation doesn't depend on Gem, so it should also work with other OpenGL  wrapping objects that can bang _ndisender_ object with GL_TEXTURE_2D as _gemframebuffer_ does)
+To use pd-ndi with Gem just connect right outlet of _[gemframebuffer]_ to the left inlet of _[ndisender]_.
+Remember to set dimmensions of NDI frame by sending _[dimen width height(_ to _[ndisender]_.\
+You can also set desired framerate of NDI vroadcast by sending _[max-fps x(_ tp _[ndisender]_.
+
+(__Note__: pd-ndi's main purpose is to be used with Gem's _[gemframebuffer]_ object, but implementation doesn't depend on Gem, so it should also work with other OpenGL  wrapping objects that can bang _[ndisender]_ object with GL_TEXTURE_2D as _[gemframebuffer]_ does)
 
 #### TODO
 * provide more NDI configuration options to PD object
