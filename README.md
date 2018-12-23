@@ -34,7 +34,7 @@ is a software standard for broadcasting high quality video and audio over networ
 
 To use pd_ndi with Gem just connect right outlet of _[gemframebuffer]_ to the left inlet of _[ndisender]_.
 Remember to set dimmensions of NDI frame by sending _[dimen $width $height (_  to _[ndisender]_ (defaults are 256 by 256).\
-You can also set desired framerate of NDI vroadcast by sending _[max-fps $1 (_ to _[ndisender]_ (30 fps by default).
+You can also set desired framerate of NDI vroadcast by sending _[fps $1 (_ to _[ndisender]_ (30 fps by default).
 
 (__Note__: pd_ndi's main purpose is to be used with Gem's _[gemframebuffer]_ object, but implementation doesn't depend on Gem, so it should also work with other OpenGL  wrapping objects that can bang _[ndisender]_ object with GL_TEXTURE_2D as _[gemframebuffer]_ does)
 
