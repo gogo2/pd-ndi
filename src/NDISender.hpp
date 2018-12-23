@@ -37,9 +37,9 @@ public:
 
     void set_framerate(int max_fps) noexcept;
 
-    int width();
+    int width() const noexcept;
 
-    int height();
+    int height() const noexcept;
 
 private:
 

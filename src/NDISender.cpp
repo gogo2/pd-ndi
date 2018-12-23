@@ -48,10 +48,10 @@ void NDISender::set_framerate(const int max_fps) noexcept {
     NDI_video_frame_.frame_rate_N = max_fps;
 }
 
-int NDISender::width() {
+int NDISender::width() const noexcept {
     return NDI_video_frame_.xres;
 }
 
-int NDISender::height() {
+int NDISender::height() const noexcept {
     return NDI_video_frame_.yres;
 }
