@@ -19,7 +19,7 @@ is a software standard for broadcasting high quality video and audio over networ
     cmake .
     make
     ```
-
+    Precompiled Windows library can be downloaded from github's releases tab.
 
 ##### Installation
 * Copy _pd-ndi_ file from _bin_ directory to your _externals_ directory where all tour externals are located
