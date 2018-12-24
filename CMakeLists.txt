@@ -13,7 +13,7 @@ set(PD_LIB_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/../_lib/include)
 
 set(NDI_LIB_NAME Processing.NDI.Lib.x86)
 set(NDI_LIB_DIR ${PROJECT_SOURCE_DIR}/../_lib/lib)
-set(NDI_LIB__INCLUDE_DIR ${PROJECT_SOURCE_DIR}/../_lib/include)
+set(NDI_LIB_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/../_lib/include)
 # END PD and NDI libraries configuration
 
 
