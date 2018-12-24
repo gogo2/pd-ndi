@@ -10,6 +10,9 @@ add_library(pd_ndi SHARED ${SRC_FILES})
 find_package(OpenGL)
 
 set_target_properties(pd_ndi PROPERTIES PREFIX "")
+if (APPLE)
+    set_target_properties(pd_ndi PROPERTIES SUFFIX ".pd_darwin")
+endif ()
 target_link_libraries(pd_ndi PRIVATE
         pd_ndi_glew
         ${OPENGL_gl_LIBRARY}
