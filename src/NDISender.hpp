@@ -6,6 +6,8 @@
 #ifndef PROJECT_H_NDISENDER_HPP
 #define PROJECT_H_NDISENDER_HPP
 
+#include <stddef.h>
+
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
