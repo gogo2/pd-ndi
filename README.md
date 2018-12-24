@@ -28,7 +28,6 @@ is a software standard for broadcasting high quality video and audio over networ
 
 ##### Have in mind that:
 * NDI library file must be visible for pd_ndi also after compilation. Easiest way to make it so is to copy it to the installation folder of pd_ndi.
-* Gem 0.93.3 distributed through Deken is 32bit-only external. Pd_ndi has to be built for 32bit(_-m32_ compilation flag), otherwise it won't work with this build of Gem.   
 
 ### Usage
 
