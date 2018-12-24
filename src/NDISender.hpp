@@ -31,7 +31,7 @@ public:
 
     void send_frame();
 
-    void *p_data() noexcept;
+    void *p_video_frame_data() noexcept;
 
     void resize_screen(int screen_width, int screen_height) noexcept;
 

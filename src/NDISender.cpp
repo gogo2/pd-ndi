@@ -12,12 +12,13 @@ NDISender::NDISender(const int screen_width, const int screen_height, const int 
     if (!NDIlib_initialize()) {
         std::cerr << "Error initializing NDI\n";
     }
-    if (pNDI_send_ = NDIlib_send_create(); pNDI_send_ == nullptr) {
+    pNDI_send_ = NDIlib_send_create();
+    if (pNDI_send_ == nullptr) {
         std::cerr << "Error initializing NDI sender\n";
     }
     NDI_video_frame_.xres = screen_width;
     NDI_video_frame_.yres = screen_height;
-    NDI_video_frame_.FourCC = NDIlib_FourCC_type_RGBA;
+    NDI_video_frame_.FourCC = NDIlib_FourCC_type_BGRA;
     NDI_video_frame_.p_data = (uint8_t *) malloc(
             static_cast<unsigned>(NDI_video_frame_.xres * NDI_video_frame_.yres * 4));
     NDI_video_frame_.frame_rate_N = max_fps;
@@ -30,7 +31,7 @@ NDISender::~NDISender() {
     NDIlib_destroy();
 }
 
-void *NDISender::p_data() noexcept {
+void *NDISender::p_video_frame_data() noexcept {
     return static_cast<void * >(NDI_video_frame_.p_data);
 }
 
