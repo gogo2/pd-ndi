@@ -3,6 +3,7 @@ project(pd_ndi_main)
 set(SRC_FILES
         NDISender.cpp
         pd-ndi.cpp
+        GemNDISender.cpp
         )
 
 add_library(pd_ndi SHARED ${SRC_FILES})
@@ -18,6 +19,7 @@ target_link_libraries(pd_ndi PRIVATE
         ${OPENGL_gl_LIBRARY}
         ${NDI_LIB_NAME}
         ${PD_LIB_NAME}
+        ${GEM_LIB_NAME}
         )
 
 

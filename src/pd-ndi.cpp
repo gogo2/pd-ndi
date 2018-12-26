@@ -59,7 +59,7 @@ void pd_ndi_send_framebuffer(t_pd_ndi *pd_ndi, t_floatarg tex) {
 extern "C" void pd_ndi_setup() {
     printf("ddd");
     pd_ndi_class = class_new(
-            gensym("ndisender"),
+            gensym("glndisender"),
             (t_newmethod) pd_ndi_new,
             (t_method) pd_ndi_delete,
             sizeof(t_pd_ndi),

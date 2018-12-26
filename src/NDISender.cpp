@@ -40,9 +40,11 @@ void NDISender::send_frame() {
 }
 
 void NDISender::resize_screen(const int screen_width, const int screen_height) noexcept {
-    NDI_video_frame_.xres = screen_width;
-    NDI_video_frame_.yres = screen_height;
-    realloc(NDI_video_frame_.p_data, static_cast<unsigned>(NDI_video_frame_.xres * NDI_video_frame_.yres * 4));
+    if (NDI_video_frame_.xres != screen_width || NDI_video_frame_.yres != screen_height) {
+        NDI_video_frame_.xres = screen_width;
+        NDI_video_frame_.yres = screen_height;
+        realloc(NDI_video_frame_.p_data, static_cast<unsigned>(NDI_video_frame_.xres * NDI_video_frame_.yres * 4));
+    }
 }
 
 void NDISender::set_framerate(const int max_fps) noexcept {

@@ -15,9 +15,14 @@ else ()
     set(NDI_LIB_NAME Processing.NDI.Lib.x64)
 endif ()
 
+set(GEM_LIB_NAME Gem)
+
+
 # PD and NDI libraries configuration BEGIN
 set(PD_LIB_DIR ${PROJECT_SOURCE_DIR}/../_lib/lib)
 set(PD_LIB_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/../_lib/include)
+set(GEM_LIB_DIR ${PROJECT_SOURCE_DIR}/../_lib/lib)
+set(GEM_LIB_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/../_lib/include/Gem)
 set(NDI_LIB_DIR ${PROJECT_SOURCE_DIR}/../_lib/lib)
 set(NDI_LIB_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/../_lib/include)
 # END PD and NDI libraries configuration
@@ -25,6 +30,8 @@ set(NDI_LIB_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/../_lib/include)
 
 include_directories(${PD_LIB_INCLUDE_DIR})
 link_directories(${PD_LIB_DIR})
+include_directories(${GEM_LIB_INCLUDE_DIR})
+link_directories(${GEM_LIB_DIR})
 include_directories(${NDI_LIB_INCLUDE_DIR})
 link_directories(${NDI_LIB_DIR})
 include_directories(${PROJECT_SOURCE_DIR}/lib/)
