@@ -43,7 +43,7 @@ is a software standard for broadcasting high quality video and audio over networ
 * #### _[pix_ndisender]_
 
     To use _[pix_ndisender]_ object with Gem just connect right outlet of _[gemframebuffer]_ to the left inlet of _[pix_ndisender]_.
-Remember to set dimensions of NDI frame by sending _[dimen $width $height (_  to _[pix_ndisender]_ (defaults are 256 by 256).\
+Remember to set dimensions of NDI frame by sending _[dimen $width $height (_  to _[pix_ndisender]_ (defaults are 256 by 256).
 
     (__Note__: pix_ndisender's main purpose is to be used with Gem's _[gemframebuffer]_ object, but implementation doesn't depend on Gem, 
     so it should also work with other OpenGL  wrapping objects that can bang _[pix_ndisender]_ object with GL_TEXTURE_2D as _[gemframebuffer]_ does)
@@ -54,7 +54,7 @@ Remember to set dimensions of NDI frame by sending _[dimen $width $height (_  to
 
 #### TODO
 * provide more NDI configuration options to PD object
-* implement sender as Gen's record plugin
+* implement sender as Gem's record plugin
 * implement audio transmission
 * help patch
 * ndi receiver

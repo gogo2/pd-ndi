@@ -1,9 +1,9 @@
-#N canvas 264 686 558 282 10;
+#N canvas 242 463 558 282 10;
 #X obj 56 37 gemwin;
 #X msg 57 10 create \, 1;
 #X obj 168 187 square;
 #X obj 44 91 metro 1000;
-#X obj 44 71 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 44 71 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 168 120 translateXYZ 0 0 -4;
 #X obj 168 155 color 0 1 0;
@@ -17,15 +17,17 @@
 #X msg 5 10 destroy;
 #X msg 14 58 1;
 #X obj 375 30 gemhead 10;
-#X obj 377 2 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 377 2 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 181 70 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 181 70 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 359 95 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 359 95 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 358 148 translateXYZ 0 5 -4;
 #X obj 357 177 circle;
 #X obj 359 112 gemhead 2;
+#X msg 313 5 fps 60;
+#X msg 314 34 fps 30;
 #X connect 1 0 0 0;
 #X connect 3 0 7 0;
 #X connect 4 0 3 0;
@@ -46,3 +48,5 @@
 #X connect 19 0 22 0;
 #X connect 20 0 21 0;
 #X connect 22 0 20 0;
+#X connect 23 0 12 0;
+#X connect 24 0 12 0;

@@ -9,7 +9,9 @@ namespace pdndi {
 
     CPPEXTERN_NEW(ndisender);
 
-    ndisender::ndisender() : ndi_sender_{800, 600} {}
+    ndisender::ndisender() : ndi_sender_{800, 600} {
+        inlet_new(this->x_obj, &this->x_obj->ob_pd, &s_float, gensym("fps"));
+    }
 
 
     void ndisender::render(GemState *state) {
@@ -20,7 +22,8 @@ namespace pdndi {
         glEnable(GL_TEXTURE_RECTANGLE_EXT);
         glGenTextures(1, &frame_tex);
         glBindTexture(GL_TEXTURE_RECTANGLE_EXT, frame_tex);
-        glTexImage2D(GL_TEXTURE_RECTANGLE_EXT, 0, GL_RGBA8, vport_dim[2], vport_dim[3], 0, GL_BGRA, GL_UNSIGNED_BYTE, nullptr);
+        glTexImage2D(GL_TEXTURE_RECTANGLE_EXT, 0, GL_RGBA8, vport_dim[2], vport_dim[3], 0, GL_BGRA, GL_UNSIGNED_BYTE,
+                     nullptr);
         glCopyTexSubImage2D(GL_TEXTURE_RECTANGLE_EXT, 0, 0, 0, vport_dim[0], vport_dim[1], vport_dim[2], vport_dim[3]);
 
         if (frame_tex) {
@@ -40,7 +43,12 @@ namespace pdndi {
         post("ndisender: stop transmission");
     }
 
-    void ndisender::obj_setupCallback(_class *classPtr) {}
+    void ndisender::set_framerate(const float max_fps) {
+        ndi_sender_.set_framerate(static_cast<int>(max_fps));
+    }
 
+    void ndisender::obj_setupCallback(_class *classPtr) {
+        CPPEXTERN_MSG1(classPtr, "fps", set_framerate, float);
+    }
 
 }

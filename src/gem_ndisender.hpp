@@ -29,6 +29,8 @@ namespace pdndi {
 
         void render(GemState *state) override;
 
+        void set_framerate(float max_fps);
+
 
     private:
 

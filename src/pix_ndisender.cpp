@@ -27,30 +27,32 @@ void *pix_ndi_new() {
 }
 
 void pix_ndi_delete(t_pix_ndi *pix_ndi) {
+    post("a");
     delete pix_ndi->ndi_sender;
+    post("b");
 }
 
 void pix_ndi_bang(t_pix_ndi *pix_ndi) {
     for (int i = 0; i < 30; ++i) {
         pix_ndi->ndi_sender->send_frame();
         memset(pix_ndi->ndi_sender->p_video_frame_data(), (i & 1) ? 255 : 0,
-               (unsigned) pix_ndi->ndi_sender->width() * pix_ndi->ndi_sender->height() * 4);
+               static_cast<unsigned >( pix_ndi->ndi_sender->width() * pix_ndi->ndi_sender->height() * 4));
     }
 }
 
 void pix_ndi_resize_screen(t_pix_ndi *pix_ndi, t_floatarg width, t_floatarg height) {
-    pix_ndi->ndi_sender->resize_screen((int) width, (int) height);
-    post(std::to_string((int) width).c_str());
-    post(std::to_string((int) height).c_str());
+    pix_ndi->ndi_sender->resize_screen(static_cast<int> (width), static_cast<int>( height));
+    post(std::to_string(static_cast<int> (width)).c_str());
+    post(std::to_string(static_cast<int> (height)).c_str());
 }
 
 void pix_ndi_set_framerate(t_pix_ndi *pix_ndi, t_floatarg max_fps) {
-    pix_ndi->ndi_sender->set_framerate((int) max_fps);
+    pix_ndi->ndi_sender->set_framerate(static_cast<int> (max_fps));
     post("ndi max_fps:");
-    post(std::to_string((int) max_fps).c_str());
+    post(std::to_string(static_cast<int>( max_fps)).c_str());
 }
 
-void pix_ndi_send_framebuffer(t_pix_ndi *pix_ndi, t_floatarg tex) {
+void pix_ndi_send_texture_2d(t_pix_ndi *pix_ndi, t_floatarg tex) {
     glBindTexture(GL_TEXTURE_2D, (GLuint) tex);
     glGetTexImage(GL_TEXTURE_2D, 0, GL_BGRA, GL_UNSIGNED_BYTE, pix_ndi->ndi_sender->p_video_frame_data());
     pix_ndi->ndi_sender->send_frame();
@@ -67,7 +69,7 @@ extern "C" void pd_ndi_setup() {
             A_GIMME,
             0);
     class_addbang(pix_ndi_class, pix_ndi_bang);
-    class_addfloat(pix_ndi_class, (t_method) pix_ndi_send_framebuffer);
+    class_addfloat(pix_ndi_class, (t_method) pix_ndi_send_texture_2d);
     class_addmethod(pix_ndi_class, (t_method) pix_ndi_resize_screen, gensym("dimen"), A_DEFFLOAT, A_DEFFLOAT, 0);
     class_addmethod(pix_ndi_class, (t_method) pix_ndi_set_framerate, gensym("fps"), A_DEFFLOAT, 0);
 }

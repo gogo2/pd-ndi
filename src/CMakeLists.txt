@@ -4,6 +4,7 @@ set(SRC_FILES
         NDISender.cpp
         pix_ndisender.cpp
         gem_ndisender.cpp
+        recordNDI.cpp
         )
 
 add_library(pd_ndi SHARED ${SRC_FILES})
