@@ -19,7 +19,7 @@
 #X obj 117 159 gemhead;
 #X msg 176 93 dimen 256 256;
 #X obj 115 239 gemhead;
-#X obj 310 203 pix_ndisender;
+#X obj 310 203 gl_ndisender;
 #X connect 1 0 0 0;
 #X connect 1 0 4 0;
 #X connect 3 0 0 0;

@@ -2,7 +2,7 @@ project(pd_ndi_main)
 
 set(SRC_FILES
         NDISender.cpp
-        pix_ndisender.cpp
+        gl_ndisender.cpp
         gem_ndisender.cpp
         recordNDI.cpp
         )
