@@ -8,14 +8,17 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 if (APPLE)
     set(CMAKE_SHARED_LIBRARY_CREATE_CXX_FLAGS "${CMAKE_SHARED_LIBRARY_CREATE_CXX_FLAGS} -undefined dynamic_lookup")
     set(PD_LIB_NAME)
+    set(GEM_LIB_NAME)
     set(NDI_LIB_NAME ndi.3)
 else ()
     set(PD_LIB_NAME pd)
+    set(GEM_LIB_NAME Gem)
     #        change if building for x86
     set(NDI_LIB_NAME Processing.NDI.Lib.x64)
 endif ()
 
-set(GEM_LIB_NAME Gem)
+
+#find_library(PD_LIB pd HINTS)
 
 
 # PD and NDI libraries configuration BEGIN
