@@ -23,11 +23,12 @@
 1;
 #X obj 359 95 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 358 148 translateXYZ 0 5 -4;
 #X obj 357 177 circle;
 #X obj 359 112 gemhead 2;
 #X msg 313 5 fps 60;
 #X msg 314 34 fps 30;
+#X obj 358 148 translateXYZ 2 5 -4;
+#X msg 157 31 dimen 640 480;
 #X connect 1 0 0 0;
 #X connect 3 0 7 0;
 #X connect 4 0 3 0;
@@ -45,8 +46,9 @@
 #X connect 16 0 12 0;
 #X connect 17 0 16 0;
 #X connect 18 0 10 0;
-#X connect 19 0 22 0;
-#X connect 20 0 21 0;
-#X connect 22 0 20 0;
+#X connect 19 0 21 0;
+#X connect 21 0 24 0;
+#X connect 22 0 12 0;
 #X connect 23 0 12 0;
-#X connect 24 0 12 0;
+#X connect 24 0 20 0;
+#X connect 25 0 0 0;
