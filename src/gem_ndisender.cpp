@@ -6,8 +6,12 @@
 #include "gem_ndisender.hpp"
 
 namespace pdndi {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpedantic"
 
     CPPEXTERN_NEW(ndisender);
+
+#pragma GCC diagnostic pop
 
     ndisender::ndisender() : ndi_sender_{800, 600} {
         inlet_new(this->x_obj, &this->x_obj->ob_pd, &s_float, gensym("fps"));

@@ -7,7 +7,12 @@
 #ifndef PD_NDI_RECORDNDI_HPP
 #define PD_NDI_RECORDNDI_HPP
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpedantic"
+
 #include <plugins/record.h>
+
+#pragma GCC diagnostic pop
 
 class GEM_EXPORT recordNDI : public gem::plugins::record {
 public:

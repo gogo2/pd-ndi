@@ -6,7 +6,13 @@
 #ifndef PD_NDI_GEMNDISENDER_HPP
 #define PD_NDI_GEMNDISENDER_HPP
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpedantic"
+
 #include <Gem/Base/GemBase.h>
+
+#pragma GCC diagnostic pop
+
 #include "NDISender.hpp"
 
 namespace pdndi {
