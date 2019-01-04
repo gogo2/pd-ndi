@@ -37,7 +37,7 @@ namespace pdndi {
 
         void set_framerate(float max_fps);
 
-        void resize_screen(const int screen_width, const int screen_height);
+        void resize_screen(int screen_width, int screen_height);
 
 
     private:

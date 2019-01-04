@@ -6,7 +6,7 @@
 #ifndef PROJECT_H_NDISENDER_HPP
 #define PROJECT_H_NDISENDER_HPP
 
-#include <stddef.h>
+#include <cstddef>
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
@@ -16,7 +16,9 @@
 #pragma GCC diagnostic pop
 
 class NDISender final {
+
 public:
+
     NDISender(int screen_width, int screen_height, int max_fps = 30);
 
     NDISender() = delete;

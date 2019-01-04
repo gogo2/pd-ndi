@@ -61,17 +61,16 @@ namespace pdndi {
         ndi_sender_.set_framerate(static_cast<int>(max_fps));
     }
 
-    void ndisender::obj_setupCallback(_class *classPtr) {
-        CPPEXTERN_MSG1(classPtr, "fps", set_framerate, float);
-    }
-
-
     void ndisender::resize_screen(const int screen_width, const int screen_height) {
         if (ndi_sender_.width() * ndi_sender_.height() != screen_width * screen_height) {
             ndi_sender_.resize_screen(screen_width, screen_height);
             p_pixel_transfer_data = (uint8_t *) realloc(p_pixel_transfer_data,
                                                         static_cast<unsigned>(screen_width * screen_height * 4));
         }
+    }
+
+    void ndisender::obj_setupCallback(_class *classPtr) {
+        CPPEXTERN_MSG1(classPtr, "fps", set_framerate, float);
     }
 
 }
