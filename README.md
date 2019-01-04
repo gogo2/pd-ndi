@@ -56,5 +56,4 @@ Remember to set dimensions of NDI frame by sending _[dimen $width $height (_  to
 * provide more NDI configuration options to PD object
 * implement sender as Gem's record plugin
 * implement audio transmission
-* help patch
 * ndi receiver
