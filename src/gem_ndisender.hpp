@@ -25,7 +25,7 @@ namespace pdndi {
 
         ndisender();
 
-        ~ndisender() override = default;
+        ~ndisender() override;
 
     protected:
 
@@ -37,10 +37,13 @@ namespace pdndi {
 
         void set_framerate(float max_fps);
 
+        void resize_screen(const int screen_width, const int screen_height);
+
 
     private:
 
         NDISender ndi_sender_;
+        uint8_t *p_pixel_transfer_data;
 
     };
 

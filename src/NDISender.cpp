@@ -40,7 +40,7 @@ void NDISender::send_frame() {
 }
 
 void NDISender::resize_screen(const int screen_width, const int screen_height) noexcept {
-    if (NDI_video_frame_.xres != screen_width || NDI_video_frame_.yres != screen_height) {
+    if (NDI_video_frame_.xres * NDI_video_frame_.yres != screen_height * screen_width) {
         NDI_video_frame_.xres = screen_width;
         NDI_video_frame_.yres = screen_height;
         NDI_video_frame_.p_data = (uint8_t *) realloc(NDI_video_frame_.p_data,
