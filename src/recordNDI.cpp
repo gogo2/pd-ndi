@@ -5,6 +5,9 @@
 
 #include "recordNDI.hpp"
 
+recordNDI::recordNDI() : ndi_sender_(500, 500) {}
+
+
 std::vector<std::string> recordNDI::getCodecs() {
     return std::vector<std::string>{"Newtek NDI"};
 }
@@ -36,3 +39,4 @@ bool recordNDI::write(imageStruct *aStruct) {
 void recordNDI::stop() {
 
 }
+

@@ -1,5 +1,5 @@
 //
-// file hem_ndisender.cpp
+// file gem_ndisender.cpp
 // Created by Bartosz Sobol
 //
 

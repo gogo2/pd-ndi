@@ -11,11 +11,15 @@
 #pragma GCC diagnostic ignored "-Wpedantic"
 
 #include <plugins/record.h>
+#include "NDISender.hpp"
 
 #pragma GCC diagnostic pop
 
 class GEM_EXPORT recordNDI : public gem::plugins::record {
 public:
+
+    recordNDI();
+
     std::vector<std::string> getCodecs() override;
 
     const std::string getCodecDescription(const std::string &codecname) override;
@@ -33,6 +37,8 @@ public:
     void stop() override;
 
 private:
+
+    NDISender ndi_sender_;
 
 };
 
