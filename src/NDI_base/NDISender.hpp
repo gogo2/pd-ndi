@@ -3,8 +3,8 @@
 // Created by Bartosz Sobol
 //
 
-#ifndef PROJECT_H_NDISENDER_HPP
-#define PROJECT_H_NDISENDER_HPP
+#ifndef PD_NDI_NDISENDER_HPP
+#define PD_NDI_NDISENDER_HPP
 
 #include <cstddef>
 
@@ -53,4 +53,4 @@ private:
 };
 
 
-#endif //PROJECT_H_NDISENDER_HPP
+#endif //PD_NDI_NDISENDER_HPP

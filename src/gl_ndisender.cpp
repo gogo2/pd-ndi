@@ -9,7 +9,7 @@
 #include <string>
 #include "glew/glew.h"
 #include "m_pd.h"
-#include "NDISender.hpp"
+#include "NDI_base/NDISender.hpp"
 
 static t_class *gl_ndisender_class;
 

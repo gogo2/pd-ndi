@@ -13,7 +13,7 @@
 
 #pragma GCC diagnostic pop
 
-#include "NDISender.hpp"
+#include "NDI_base/NDISender.hpp"
 
 namespace pdndi {
 
