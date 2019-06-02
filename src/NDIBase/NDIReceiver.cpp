@@ -6,7 +6,7 @@
 #include <iostream>
 #include "NDIReceiver.hpp"
 
-NDIReceiver::NDIReceiver() : source_finder_{}, pNDI_recv_(nullptr), NDI_video_frame_{}, NDI_audio_frame_{} {
+NDIReceiver::NDIReceiver() : source_finder{}, pNDI_recv_(nullptr), NDI_video_frame_{}, NDI_audio_frame_{} {
     if (!NDIlib_initialize()) {
         std::cerr << "Error initializing NDI\n";
     }
@@ -21,12 +21,12 @@ NDIReceiver::~NDIReceiver() {
     NDIlib_destroy();
 }
 
-void NDIReceiver::find_sources() {
-    source_finder_.find_sources();
+bool NDIReceiver::find_sources() {
+    return source_finder.find_sources();
 }
 
 void NDIReceiver::connect(uint32_t source) {
-    NDIlib_recv_connect(pNDI_recv_, source_finder_.p_sources() + (source * sizeof(NDIlib_source_t)));
+    NDIlib_recv_connect(pNDI_recv_, source_finder.p_sources() + (source * sizeof(NDIlib_source_t)));
 }
 
 std::pair<bool, bool> NDIReceiver::receive_frame() {

@@ -34,6 +34,10 @@ namespace pdndi {
 
         void render(GemState *state) override;
 
+        void find_sources();
+
+        void post_sources();
+
 
     private:
 

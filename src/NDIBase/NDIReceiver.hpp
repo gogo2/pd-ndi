@@ -32,7 +32,7 @@ public:
 
     ~NDIReceiver();
 
-    void find_sources();
+    bool find_sources();
 
     void connect(uint32_t source);
 
@@ -42,9 +42,10 @@ public:
 
     const NDIlib_audio_frame_v2_t & NDI_audio_frame() noexcept;
 
+    NDISourceFinder source_finder;
 
 private:
-    NDISourceFinder source_finder_;
+
     NDIlib_recv_instance_t pNDI_recv_;
     NDIlib_video_frame_v2_t NDI_video_frame_;
     NDIlib_audio_frame_v2_t NDI_audio_frame_;
