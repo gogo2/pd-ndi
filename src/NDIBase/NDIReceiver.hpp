@@ -36,12 +36,18 @@ public:
 
     void connect(uint32_t source);
 
-    void receive_frame();
+    std::pair<bool, bool> receive_frame();
+
+    const NDIlib_video_frame_v2_t & NDI_video_frame() noexcept;
+
+    const NDIlib_audio_frame_v2_t & NDI_audio_frame() noexcept;
 
 
 private:
     NDISourceFinder source_finder_;
     NDIlib_recv_instance_t pNDI_recv_;
+    NDIlib_video_frame_v2_t NDI_video_frame_;
+    NDIlib_audio_frame_v2_t NDI_audio_frame_;
 
 
 };
