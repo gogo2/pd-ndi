@@ -50,7 +50,7 @@ void gl_ndisender_set_framerate(t_gl_ndisender *gl_ndisender, t_floatarg max_fps
 
 void gl_ndisender_send_texture_2d(t_gl_ndisender *gl_ndisender, t_floatarg tex) {
     glBindTexture(GL_TEXTURE_2D, (GLuint) tex);
-    glGetTexImage(GL_TEXTURE_2D, 0, GL_BGRA, GL_UNSIGNED_BYTE, gl_ndisender->ndi_sender->p_video_frame_data());
+    glGetTexImage(GL_TEXTURE_2D, 0, GL_BGRA, GL_UNSIGNED_BYTE, (void *) (gl_ndisender->ndi_sender->p_video_frame_data()));
     gl_ndisender->ndi_sender->send_frame();
 }
 

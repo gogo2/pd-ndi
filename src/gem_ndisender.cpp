@@ -39,7 +39,7 @@ namespace pdndi {
             resize_screen(vport_width, vport_height);
             glGetTexImage(GL_TEXTURE_2D, 0, GL_BGRA, GL_UNSIGNED_BYTE, p_pixel_transfer_data);
             for (int i = 0; i < vport_height; ++i) {
-                memcpy((uint8_t *) ndi_sender_.p_video_frame_data() + i * vport_width * 4,
+                memcpy(ndi_sender_.p_video_frame_data() + i * vport_width * 4,
                        p_pixel_transfer_data + vport_width * 4 * (vport_height - i - 1),
                        static_cast<size_t >(vport_width) * 4);
             }

@@ -31,8 +31,8 @@ NDISender::~NDISender() {
     NDIlib_destroy();
 }
 
-void *NDISender::p_video_frame_data() noexcept {
-    return static_cast<void * >(NDI_video_frame_.p_data);
+uint8_t *NDISender::p_video_frame_data() noexcept {
+    return NDI_video_frame_.p_data;
 }
 
 void NDISender::send_frame() {
