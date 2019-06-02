@@ -26,15 +26,15 @@ bool NDISourceFinder::find_sources() {
     return no_sources_ > 0;
 }
 
-const NDIlib_source_t *NDISourceFinder::p_sources() {
+const NDIlib_source_t *NDISourceFinder::p_sources() const noexcept {
     return p_sources_;
 }
 
-const uint32_t NDISourceFinder::no_sources() {
+const uint32_t NDISourceFinder::no_sources() const noexcept {
     return no_sources_;
 }
 
-std::ostream &operator<<(std::ostream &ostream, const NDISourceFinder &source_finder) {
+std::ostream &operator<<(std::ostream &ostream, const NDISourceFinder &source_finder){
     if (source_finder.no_sources_ > 0) {
         for (uint32_t i = 0; i < source_finder.no_sources_; i++) {
             ostream << i << "\t" << source_finder.p_sources_[i].p_ndi_name << std::endl;

@@ -15,10 +15,12 @@
 
 #pragma GCC diagnostic pop
 
+#include "NDISourceFinder.hpp"
+
 class NDIReceiver final {
 public:
 
-    NDIReceiver() = default;
+    NDIReceiver();
 
     NDIReceiver(const NDIReceiver &) = delete;
 
@@ -28,15 +30,18 @@ public:
 
     NDIReceiver &operator=(const NDIReceiver &&) = delete;
 
-    ~NDIReceiver() = default;
+    ~NDIReceiver();
 
     void find_sources();
 
-    void connect(int source);
+    void connect(uint32_t source);
+
+    void receive_frame();
 
 
 private:
-
+    NDISourceFinder source_finder_;
+    NDIlib_recv_instance_t pNDI_recv_;
 
 
 };
