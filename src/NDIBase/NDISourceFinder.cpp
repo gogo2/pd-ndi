@@ -30,7 +30,7 @@ const NDIlib_source_t *NDISourceFinder::p_sources() const noexcept {
     return p_sources_;
 }
 
-const uint32_t NDISourceFinder::no_sources() const noexcept {
+uint32_t NDISourceFinder::no_sources() const noexcept {
     return no_sources_;
 }
 

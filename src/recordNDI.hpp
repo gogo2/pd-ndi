@@ -11,7 +11,7 @@
 #pragma GCC diagnostic ignored "-Wpedantic"
 
 #include <plugins/record.h>
-#include "NDI_base/NDISender.hpp"
+#include "NDIBase/NDISender.hpp"
 
 #pragma GCC diagnostic pop
 

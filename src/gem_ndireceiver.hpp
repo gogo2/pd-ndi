@@ -24,6 +24,8 @@ namespace pdndi {
 
         ndireceiver();
 
+        ndireceiver(t_float source);
+
         ~ndireceiver() override;
 
     protected:
@@ -37,6 +39,8 @@ namespace pdndi {
         void find_sources();
 
         void post_sources();
+
+        void set_source(uint32_t source);
 
 
     private:

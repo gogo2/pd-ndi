@@ -26,7 +26,9 @@ bool NDIReceiver::find_sources() {
 }
 
 void NDIReceiver::connect(uint32_t source) {
-    NDIlib_recv_connect(pNDI_recv_, source_finder.p_sources() + (source * sizeof(NDIlib_source_t)));
+    if (source < source_finder.no_sources()) {
+        NDIlib_recv_connect(pNDI_recv_, source_finder.p_sources() + (source * sizeof(NDIlib_source_t)));
+    }
 }
 
 std::pair<bool, bool> NDIReceiver::receive_frame() {
@@ -49,10 +51,10 @@ std::pair<bool, bool> NDIReceiver::receive_frame() {
     return {video, audio};
 }
 
-const NDIlib_video_frame_v2_t & NDIReceiver::NDI_video_frame() noexcept {
+const NDIlib_video_frame_v2_t &NDIReceiver::NDI_video_frame() noexcept {
     return NDI_video_frame_;
 }
 
-const NDIlib_audio_frame_v2_t & NDIReceiver::NDI_audio_frame() noexcept {
+const NDIlib_audio_frame_v2_t &NDIReceiver::NDI_audio_frame() noexcept {
     return NDI_audio_frame_;
 }

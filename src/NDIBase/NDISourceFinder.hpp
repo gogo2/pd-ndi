@@ -36,7 +36,7 @@ public:
 
     const NDIlib_source_t *p_sources() const noexcept;
 
-    const uint32_t no_sources() const noexcept;
+    uint32_t no_sources() const noexcept;
 
 
 private:
