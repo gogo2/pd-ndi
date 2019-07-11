@@ -3,6 +3,7 @@
 // Created by Bartosz Sobol
 //
 
+#include <glew/glew.h>
 #include "gem_ndisender.hpp"
 
 namespace pdndi {

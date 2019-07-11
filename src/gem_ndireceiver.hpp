@@ -1,6 +1,6 @@
 //
 // file gem_ndireceiver.hpp
-// Created by Bartek
+// Created by Bartosz Sobol
 //
 
 #ifndef PD_NDI_GEM_NDIRECEIVER_HPP

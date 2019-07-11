@@ -1,6 +1,6 @@
 //
 // file gem_ndireceiver.cpp
-// Created by Bartek
+// Created by Bartosz Sobol
 //
 
 #include "gem_ndireceiver.hpp"

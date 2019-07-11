@@ -1,6 +1,6 @@
 //
 // file NDIReceiver.cpp
-// Created by Bartek
+// Created by Bartosz Sobol
 //
 
 #include <iostream>

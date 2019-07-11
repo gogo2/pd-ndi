@@ -1,6 +1,6 @@
 //
 // file NDISourceFinder.cpp
-// Created by Bartek
+// Created by Bartosz Sobol
 //
 
 

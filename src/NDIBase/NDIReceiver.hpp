@@ -1,6 +1,6 @@
 //
 // file NDIReceiver.hpp
-// Created by Bartek
+// Created by Bartosz Sobol
 //
 
 #ifndef PD_NDI_NDIRECEIVER_HPP

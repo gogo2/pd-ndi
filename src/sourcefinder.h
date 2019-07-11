@@ -1,6 +1,6 @@
 //
 // file sourcefinder.h
-// Created by Bartek
+// Created by Bartosz Sobol
 //
 
 #include <sstream>

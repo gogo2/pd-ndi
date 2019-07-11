@@ -1,6 +1,6 @@
 //
 // file sourcefinder.cpp
-// Created by Bartek
+// Created by Bartosz Sobol
 //
 
 #include "sourcefinder.h"

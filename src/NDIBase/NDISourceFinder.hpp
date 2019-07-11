@@ -1,6 +1,6 @@
 //
 // file NDISourceFinder.hpp
-// Created by Bartek
+// Created by Bartosz Sobol
 //
 
 #ifndef PD_NDI_NDISOURCEFINDER_HPP
