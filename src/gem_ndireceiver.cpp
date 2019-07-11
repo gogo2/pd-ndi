@@ -37,6 +37,14 @@ namespace pdndi {
     }
 
     void ndireceiver::render(GemState *state) {
+        auto result = ndi_receiver_.receive_frame();
+        if (result.first) {
+
+        }
+
+        if (result.second) {
+
+        }
 
     }
 

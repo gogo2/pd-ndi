@@ -3,9 +3,7 @@
 // Created by Bartosz Sobol
 //
 
-
 #include "gl_ndisender.h"
-#include <sstream>
 
 void *gl_ndisender_new() {
     auto *gl_ndisender = (t_gl_ndisender *) pd_new(gl_ndisender_class);
