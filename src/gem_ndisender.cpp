@@ -60,6 +60,7 @@ namespace pdndi {
 
     void ndisender::set_framerate(const float max_fps) {
         ndi_sender_.set_framerate(static_cast<int>(max_fps));
+        post("ndisender max_fps: %d", static_cast<int>( max_fps));
     }
 
     void ndisender::resize_screen(const int screen_width, const int screen_height) {

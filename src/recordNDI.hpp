@@ -22,7 +22,7 @@ public:
 
     std::vector<std::string> getCodecs() override;
 
-    const std::string getCodecDescription(const std::string &codecname) override;
+    std::string getCodecDescription(const std::string &codecname) override;
 
     bool setCodec(const std::string &name) override;
 

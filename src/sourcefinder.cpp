@@ -19,7 +19,7 @@ void ndisourcefinder_bang(t_ndisourcefinder *ndisourcefinder) {
     ndisourcefinder->ndi_sourcefinder->find_sources();
     std::ostringstream osstream;
     osstream << std::endl << ndisourcefinder->ndi_sourcefinder;
-    post("ndireceiver sources:");
+    post("ndisourcefinder sources:");
     post(osstream.str().c_str());
 }
 

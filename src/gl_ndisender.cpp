@@ -35,8 +35,7 @@ void gl_ndisender_resize_screen(t_gl_ndisender *gl_ndisender, t_floatarg width, 
 
 void gl_ndisender_set_framerate(t_gl_ndisender *gl_ndisender, t_floatarg max_fps) {
     gl_ndisender->ndi_sender->set_framerate(static_cast<int> (max_fps));
-    post("ndi max_fps:");
-    post(std::to_string(static_cast<int>( max_fps)).c_str());
+    post("gl_ndisender max_fps: %d", static_cast<int>( max_fps));
 }
 
 void gl_ndisender_send_texture_2d(t_gl_ndisender *gl_ndisender, t_floatarg tex) {
@@ -56,9 +55,7 @@ void gl_ndisender_send_texture_2d(t_gl_ndisender *gl_ndisender, t_floatarg tex) 
 }
 
 void gl_ndisender_post_size(int width, int height) {
-    std::ostringstream osstream;
-    osstream << std::endl << "width: " << width << std::endl << "height: " << height;
     post("gl_ndisender screen size:");
-    post(osstream.str().c_str());
+    post("width: %d\n height: %d", width, height);
 }
 

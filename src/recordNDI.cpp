@@ -12,7 +12,7 @@ std::vector<std::string> recordNDI::getCodecs() {
     return std::vector<std::string>{"Newtek NDI"};
 }
 
-const std::string recordNDI::getCodecDescription(const std::string &codecname) {
+std::string recordNDI::getCodecDescription(const std::string &codecname) {
     return std::string{"https://www.newtek.com/ndi/ \n https://en.wikipedia.org/wiki/Network_Device_Interface"};
 }
 
