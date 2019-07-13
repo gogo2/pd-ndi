@@ -4,12 +4,13 @@ set(SRC_FILES
         NDIBase/NDISender.cpp
         NDIBase/NDISourceFinder.cpp
         NDIBase/NDIReceiver.cpp
+        pd_ndi.cpp
         gl_ndisender.cpp
         gem_ndisender.cpp
         gem_ndireceiver.cpp
         recordNDI.cpp
         sourcefinder.cpp
-        pd_ndi.cpp
+
         )
 
 add_library(pd_ndi SHARED ${SRC_FILES})

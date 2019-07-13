@@ -3,9 +3,8 @@
 // Created by Bartosz Sobol
 //
 
-#include "gem_ndireceiver.hpp"
-#include "gem_ndisender.hpp"
 #include <sstream>
+#include "gem_ndireceiver.hpp"
 
 namespace pdndi {
 #pragma GCC diagnostic push
@@ -15,17 +14,13 @@ namespace pdndi {
 
 #pragma GCC diagnostic pop
 
-    ndireceiver::ndireceiver() {
+    ndireceiver::ndireceiver() : pix_block_{}, ndi_receiver_{} {
+        pix_block_.image.csize = 4;
         inlet_new(this->x_obj, &this->x_obj->ob_pd, &s_float, gensym("source"));
-        p_pixel_transfer_data = (uint8_t *) malloc(static_cast<unsigned>(500 * 500 * 4));
     }
 
     ndireceiver::ndireceiver(t_float source) : ndireceiver{} {
         set_source(static_cast<uint32_t >(source));
-    }
-
-    ndireceiver::~ndireceiver() {
-        free(p_pixel_transfer_data);
     }
 
     void ndireceiver::startRendering() {
@@ -39,12 +34,46 @@ namespace pdndi {
     void ndireceiver::render(GemState *state) {
         auto result = ndi_receiver_.receive_frame();
         if (result.first) {
+            auto ndi_frame = ndi_receiver_.NDI_video_frame();
+            if (ndi_frame.xres != pix_block_.image.xsize || ndi_frame.xres != pix_block_.image.ysize) {
+                pix_block_.image.xsize = ndi_frame.xres;
+                pix_block_.image.ysize = ndi_frame.yres;
+                pix_block_.image.reallocate();
+            }
 
+            switch (ndi_frame.FourCC) {
+                case NDIlib_FourCC_type_BGRA:
+                    pix_block_.image.fromBGRA(ndi_frame.p_data);
+                    break;
+                case NDIlib_FourCC_type_BGRX:
+                    pix_block_.image.fromBGRA(ndi_frame.p_data);
+                    break;
+                case NDIlib_FourCC_type_RGBA:
+                    pix_block_.image.fromRGBA(ndi_frame.p_data);
+                    break;
+                case NDIlib_FourCC_type_RGBX:
+                    pix_block_.image.fromRGBA(ndi_frame.p_data);
+                    break;
+                case NDIlib_FourCC_type_UYVY:
+                    pix_block_.image.fromUYVY(ndi_frame.p_data);
+                    break;
+                case NDIlib_FourCC_type_YV12:
+                    pix_block_.image.fromYV12(ndi_frame.p_data);
+                    break;
+                case NDIlib_FourCC_type_UYVA:
+                    pix_block_.image.fromUYVY(ndi_frame.p_data);
+                case NDIlib_FourCC_type_I420:
+                    pix_block_.image.fromYUV420P(ndi_frame.p_data);
+                default:
+                    error("ndireceiver: not supported fram color format");
+                    break;
+            }
+
+            pix_block_.newimage = true;
+            state->set(GemState::_PIX, &pix_block_);
         }
 
-        if (result.second) {
-
-        }
+        if (result.second) {}
 
     }
 

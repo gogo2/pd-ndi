@@ -35,15 +35,12 @@ std::pair<bool, bool> NDIReceiver::receive_frame() {
     bool video = false, audio = false;
     switch (NDIlib_recv_capture_v2(pNDI_recv_, &NDI_video_frame_, &NDI_audio_frame_, nullptr, 5000)) {
         case NDIlib_frame_type_none:
-            printf("No data received.\n");
             break;
         case NDIlib_frame_type_video:
-            printf("Video data received (%dx%d).\n", NDI_video_frame_.xres, NDI_video_frame_.yres);
             NDIlib_recv_free_video_v2(pNDI_recv_, &NDI_video_frame_);
             video = true;
             break;
         case NDIlib_frame_type_audio:
-            printf("Audio data received (%d samples).\n", NDI_audio_frame_.no_samples);
             NDIlib_recv_free_audio_v2(pNDI_recv_, &NDI_audio_frame_);
             audio = true;
             break;

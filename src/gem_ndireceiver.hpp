@@ -10,13 +10,16 @@
 #pragma GCC diagnostic ignored "-Wpedantic"
 
 #include <Gem/Base/GemBase.h>
+#include "Gem/Image.h"
+#include "Gem/State.h"
 
 #pragma GCC diagnostic pop
 
 #include "NDIBase/NDIReceiver.hpp"
 
+
 namespace pdndi {
-    class GEM_EXTERN ndireceiver : public GemBase{
+    class GEM_EXTERN ndireceiver : public GemBase {
 
     CPPEXTERN_HEADER(ndireceiver, GemBase)
 
@@ -26,7 +29,7 @@ namespace pdndi {
 
         ndireceiver(t_float source);
 
-        ~ndireceiver() override;
+        ~ndireceiver() = default;
 
     protected:
 
@@ -44,9 +47,10 @@ namespace pdndi {
 
 
     private:
+        pixBlock pix_block_;
+        imageStruct gem_frame_;
 
         NDIReceiver ndi_receiver_;
-        uint8_t *p_pixel_transfer_data;
 
     };
 
