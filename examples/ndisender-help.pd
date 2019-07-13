@@ -1,34 +1,34 @@
 #N canvas 242 463 558 282 10;
-#X obj 56 37 gemwin;
-#X msg 57 10 create \, 1;
-#X obj 168 187 square;
-#X obj 44 91 metro 1000;
-#X obj 44 71 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 80 42 gemwin;
+#X msg 80 15 create \, 1;
+#X obj 220 190 square;
+#X obj 96 108 metro 1000;
+#X obj 96 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 168 120 translateXYZ 0 0 -4;
-#X obj 168 155 color 0 1 0;
-#X obj 44 114 t b b;
-#X obj 44 155 delay 500;
-#X msg 44 190 color 1 0 0;
-#X obj 179 96 gemhead 1;
-#X msg 70 135 color 0 0 0;
-#X obj 376 59 ndisender;
-#X msg 12 33 0;
-#X msg 5 10 destroy;
-#X msg 14 58 1;
-#X obj 375 30 gemhead 10;
-#X obj 377 2 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 220 135 translateXYZ 0 0 -4;
+#X obj 220 164 color 0 1 0;
+#X obj 96 129 t b b;
+#X obj 96 168 delay 500;
+#X msg 96 192 color 1 0 0;
+#X obj 220 111 gemhead 1;
+#X msg 123 149 color 0 0 0;
+#X obj 361 50 ndisender;
+#X msg 36 38 0;
+#X msg 28 15 destroy;
+#X msg 36 59 1;
+#X obj 361 25 gemhead 10;
+#X obj 361 2 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 181 70 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 220 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 359 95 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 360 95 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 357 177 circle;
-#X obj 359 112 gemhead 2;
-#X msg 313 5 fps 60;
-#X msg 314 34 fps 30;
-#X obj 358 148 translateXYZ 2 5 -4;
-#X msg 157 31 dimen 640 480;
+#X obj 360 155 circle;
+#X obj 360 112 gemhead 2;
+#X msg 300 14 fps 60;
+#X msg 300 35 fps 30;
+#X msg 193 28 dimen 640 480;
+#X obj 360 134 translateXYZ 2 5 -4;
 #X connect 1 0 0 0;
 #X connect 3 0 7 0;
 #X connect 4 0 3 0;
@@ -47,8 +47,8 @@
 #X connect 17 0 16 0;
 #X connect 18 0 10 0;
 #X connect 19 0 21 0;
-#X connect 21 0 24 0;
+#X connect 21 0 25 0;
 #X connect 22 0 12 0;
 #X connect 23 0 12 0;
-#X connect 24 0 20 0;
-#X connect 25 0 0 0;
+#X connect 24 0 0 0;
+#X connect 25 0 20 0;

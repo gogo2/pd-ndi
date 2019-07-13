@@ -62,10 +62,12 @@ namespace pdndi {
                     break;
                 case NDIlib_FourCC_type_UYVA:
                     pix_block_.image.fromUYVY(ndi_frame.p_data);
+                    break;
                 case NDIlib_FourCC_type_I420:
                     pix_block_.image.fromYUV420P(ndi_frame.p_data);
+                    break;
                 default:
-                    error("ndireceiver: not supported fram color format");
+                    error("ndireceiver: not supported color format");
                     break;
             }
 
