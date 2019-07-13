@@ -1,4 +1,4 @@
-#N canvas 969 265 450 300 10;
+#N canvas 655 508 450 300 10;
 #X obj 224 48 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 224 115 ndisourcefinder;
@@ -10,4 +10,6 @@
 #X text 220 9 Example;
 #X text 13 115 Inlets:;
 #X text 34 132 Inlet 1: bang togles source searchment, f 25;
+#X text 17 36 Performs search for available NDI sources and prints
+list in console, f 30;
 #X connect 0 0 1 0;

@@ -40,8 +40,11 @@ is a software standard for broadcasting high quality video and audio over networ
     In case you are familiar with syphonserver for Gem, ndisender will work the same way.
     
 * #### _[ndireceiver]_  (unstable)
+    Passes data received from NDI source as pix data. Works similarly to e.g. [_pix_image_] 
 
-* #### _[ndisourcefinder]_ 
+* #### _[ndisourcefinder]_
+    Simple object that will search for availablke NDI sources after receiving bang. Results are printed in console. 
+    
 
 * #### _[gl_ndisender]_
 

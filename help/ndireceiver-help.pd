@@ -47,6 +47,8 @@ NDI sources, f 29;
 #X text 25 248 Outlet 1: gemlist;
 #X text 31 91 Argument 1: source <id> connects receiver to source,
 f 27;
+#X text 13 30 NDI receiver which works as pix source for [pix_texture]
+or [pix_draw]. Behaves similarily to [pix_image], f 32;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;

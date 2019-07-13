@@ -1,4 +1,4 @@
-#N canvas 809 464 694 537 10;
+#N canvas 496 349 694 537 10;
 #X obj 243 59 gemwin;
 #X msg 243 37 create \, 1;
 #X obj 366 211 square;
@@ -25,7 +25,6 @@
 0;
 #X text 11 94 Arguments:;
 #X text 13 123 Inlets:;
-#X text 27 137 Inlet 1: gemlist;
 #X text 15 287 Outlets:;
 #X text 27 156 Inlet 1: fps <fps>: sets desired fps count for gl_ndisender
 , f 31;
@@ -34,6 +33,9 @@ of NDI frame, f 31;
 #X text 25 243 Inlet 1: bang: sends 30 test frames, f 31;
 #X text 242 11 Example;
 #X text 14 13 [gl_ndisender];
+#X text 27 137 Inlet 1: texture <id>;
+#X text 18 34 Performs data capture from given GL_TEXTURE_2D and broadcasting
+over NDI source named 'pd'., f 34;
 #X connect 1 0 0 0;
 #X connect 3 0 7 0;
 #X connect 4 0 3 0;
