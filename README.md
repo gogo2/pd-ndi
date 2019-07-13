@@ -43,13 +43,12 @@ is a software standard for broadcasting high quality video and audio over networ
     Passes data received from NDI source as pix data. Works similarly to e.g. [_pix_image_] 
 
 * #### _[ndisourcefinder]_
-    Simple object that will search for availablke NDI sources after receiving bang. Results are printed in console. 
+    Simple object that will search for available NDI sources after receiving bang. Results are printed in console. 
     
 
 * #### _[gl_ndisender]_
 
     To use _[gl_ndisender]_ object with Gem just connect right outlet of _[gemframebuffer]_ to the left inlet of _[gl_ndisender]_.
-Remember to set dimensions of NDI frame by sending _[dimen $width $height (_  to _[gl_ndisender]_ (defaults are 256 by 256).
 
     (__Note__: gl_ndisender's main purpose is to be used with Gem's _[gemframebuffer]_ object, but implementation doesn't depend on Gem, 
     so it should also work with other OpenGL  wrapping objects that can bang _[gl_ndisender]_ object with GL_TEXTURE_2D as _[gemframebuffer]_ does)
