@@ -58,7 +58,7 @@ void gl_ndisender_post_size(int width, int height) {
 }
 
 
-void setup_gl_ndisender(){
+void gl_ndisender_setup(){
     gl_ndisender_class = class_new(
             gensym("gl_ndisender"),
             (t_newmethod) gl_ndisender_new,

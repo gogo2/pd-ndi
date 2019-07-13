@@ -1,34 +1,45 @@
-#N canvas 242 463 558 282 10;
-#X obj 80 42 gemwin;
-#X msg 80 15 create \, 1;
-#X obj 220 190 square;
-#X obj 96 108 metro 1000;
-#X obj 96 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
-;
-#X obj 220 135 translateXYZ 0 0 -4;
-#X obj 220 164 color 0 1 0;
-#X obj 96 129 t b b;
-#X obj 96 168 delay 500;
-#X msg 96 192 color 1 0 0;
-#X obj 220 111 gemhead 1;
-#X msg 123 149 color 0 0 0;
-#X obj 361 50 ndisender;
-#X msg 36 38 0;
-#X msg 28 15 destroy;
-#X msg 36 59 1;
-#X obj 361 25 gemhead 10;
-#X obj 361 2 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
-;
-#X obj 220 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#N canvas 321 541 505 360 10;
+#X obj 274 59 gemwin;
+#X msg 274 32 create \, 1;
+#X obj 348 215 square;
+#X obj 224 133 metro 1000;
+#X obj 224 112 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 360 95 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 348 160 translateXYZ 0 0 -4;
+#X obj 348 189 color 0 1 0;
+#X obj 224 154 t b b;
+#X obj 224 193 delay 500;
+#X msg 224 217 color 1 0 0;
+#X obj 348 136 gemhead 1;
+#X msg 251 174 color 0 0 0;
+#X obj 283 309 ndisender;
+#X msg 230 55 0;
+#X msg 222 32 destroy;
+#X msg 230 76 1;
+#X obj 283 284 gemhead 10;
+#X obj 283 261 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 360 155 circle;
-#X obj 360 112 gemhead 2;
-#X msg 300 14 fps 60;
-#X msg 300 35 fps 30;
-#X msg 193 28 dimen 640 480;
-#X obj 360 134 translateXYZ 2 5 -4;
+#X obj 348 113 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 370 261 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 370 321 circle;
+#X obj 370 278 gemhead 2;
+#X msg 222 273 fps 60;
+#X msg 222 294 fps 30;
+#X msg 352 44 dimen 640 480;
+#X obj 370 300 translateXYZ 2 5 -4;
+#X text 221 8 Example;
+#X obj 9 8 cnv 15 200 340 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 11 94 Arguments:;
+#X text 13 123 Inlets:;
+#X text 27 137 Inlet 1: gemlist;
+#X text 16 231 Outlets:;
+#X text 25 248 Outlet 1: gemlist;
+#X text 14 13 [ndisender];
+#X text 27 156 Inlet 1: message: fps <fps>: sets desired fps count
+for ndisender, f 29;
 #X connect 1 0 0 0;
 #X connect 3 0 7 0;
 #X connect 4 0 3 0;

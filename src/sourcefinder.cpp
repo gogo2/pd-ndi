@@ -24,7 +24,7 @@ void ndisourcefinder_bang(t_ndisourcefinder *ndisourcefinder) {
 }
 
 
-void setup_ndisourcefinder() {
+void ndisourcefinder_setup() {
     ndisourcefinder_class = class_new(
             gensym("ndisourcefinder"),
             (t_newmethod) ndisourcefinder_new,

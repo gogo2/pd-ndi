@@ -1,9 +1,9 @@
-#N canvas 575 650 450 300 10;
-#X obj 57 108 pix_texture;
-#X obj 57 17 gemhead;
-#X obj 57 58 ndireceiver;
-#X obj 57 154 square 3;
-#X obj 327 7 cnv 15 100 60 empty empty empty 20 12 0 14 -195568 -66577
+#N canvas 440 173 449 300 10;
+#X obj 219 141 pix_texture;
+#X obj 219 50 gemhead;
+#X obj 219 91 ndireceiver;
+#X obj 219 187 square 3;
+#X obj 327 146 cnv 15 100 60 empty empty empty 20 12 0 14 -195568 -66577
 0;
 #N canvas 0 50 450 300 gemwin 0;
 #X obj 132 136 gemwin;
@@ -27,11 +27,26 @@
 #X connect 7 0 0 0;
 #X connect 8 0 0 0;
 #X connect 9 0 0 0;
-#X restore 332 46 pd gemwin;
-#X msg 332 27 create;
-#X text 328 6 Create window:;
-#X msg 167 31 find_sources;
-#X msg 168 7 source 0;
+#X restore 332 185 pd gemwin;
+#X msg 332 166 create;
+#X text 328 145 Create window:;
+#X msg 329 64 find_sources;
+#X msg 330 40 source 0;
+#X obj 9 8 cnv 15 200 280 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 218 12 Example;
+#X text 14 13 [ndireceiver];
+#X text 12 77 Arguments:;
+#X text 13 123 Inlets:;
+#X text 27 157 Inlet 1: message: find_sources finds and lists available
+NDI sources, f 29;
+#X text 27 199 Inlet 1: message: source <id> connects receiver to source
+, f 29;
+#X text 28 137 Inlet 1: gemlist;
+#X text 16 231 Outlets:;
+#X text 25 248 Outlet 1: gemlist;
+#X text 31 91 Argument 1: source <id> connects receiver to source,
+f 27;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;

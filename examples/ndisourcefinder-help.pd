@@ -1,5 +1,13 @@
-#N canvas 757 437 450 300 10;
-#X obj 56 77 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#N canvas 969 265 450 300 10;
+#X obj 224 48 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 56 144 ndisourcefinder;
+#X obj 224 115 ndisourcefinder;
+#X obj 9 8 cnv 15 200 280 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 14 13 [ndireceiver];
+#X text 11 94 Arguments:;
+#X text 14 166 Outlets:;
+#X text 220 9 Example;
+#X text 13 115 Inlets:;
+#X text 34 132 Inlet 1: bang togles source searchment, f 25;
 #X connect 0 0 1 0;

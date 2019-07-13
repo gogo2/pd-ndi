@@ -1,26 +1,39 @@
-#N canvas 178 412 472 282 10;
-#X obj 45 35 gemwin;
-#X msg 45 13 create \, 1;
-#X obj 168 187 square;
-#X obj 44 91 metro 1000;
-#X obj 44 71 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
-;
-#X obj 168 56 gemframebuffer;
-#X obj 168 155 color 0 1 0;
-#X obj 44 114 t b b;
-#X obj 44 155 delay 500;
-#X msg 44 190 color 1 0 0;
-#X obj 168 26 gemhead 2;
-#X obj 180 102 gemhead 1;
-#X msg 70 135 color 0 0 0;
-#X obj 278 79 gl_ndisender;
-#X obj 169 126 translateXYZ 2 2 -4;
-#X obj 168 80 scaleXYZ 1 -1 1;
-#X obj 169 2 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
-;
-#X msg 240 29 dimen 640 480;
-#X msg 362 32 fps 30;
-#X msg 363 8 fps 60;
+#N canvas 809 464 694 537 10;
+#X obj 243 59 gemwin;
+#X msg 243 37 create \, 1;
+#X obj 366 211 square;
+#X obj 242 115 metro 1000;
+#X obj 242 95 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 366 80 gemframebuffer;
+#X obj 366 179 color 0 1 0;
+#X obj 242 138 t b b;
+#X obj 242 179 delay 500;
+#X msg 242 214 color 1 0 0;
+#X obj 366 50 gemhead 2;
+#X obj 378 126 gemhead 1;
+#X msg 268 159 color 0 0 0;
+#X obj 476 103 gl_ndisender;
+#X obj 367 150 translateXYZ 2 2 -4;
+#X obj 366 104 scaleXYZ 1 -1 1;
+#X obj 367 26 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 438 53 dimen 640 480;
+#X msg 560 56 fps 30;
+#X msg 561 32 fps 60;
+#X obj 9 8 cnv 15 220 340 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 11 94 Arguments:;
+#X text 13 123 Inlets:;
+#X text 27 137 Inlet 1: gemlist;
+#X text 15 287 Outlets:;
+#X text 27 156 Inlet 1: fps <fps>: sets desired fps count for gl_ndisender
+, f 31;
+#X text 26 198 Inlet 1: message: dimen <w> <h>: sets width and height
+of NDI frame, f 31;
+#X text 25 243 Inlet 1: bang: sends 30 test frames, f 31;
+#X text 242 11 Example;
+#X text 14 13 [gl_ndisender];
 #X connect 1 0 0 0;
 #X connect 3 0 7 0;
 #X connect 4 0 3 0;

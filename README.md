@@ -10,35 +10,38 @@ is a software standard for broadcasting high quality video and audio over networ
 
 ### Compilation and installation
 
-##### Requirements
+#### Requirements
 * Building process of pd_ndi is managed by [CMake](https://cmake.org/)
 * Pd_ndi depends on Newtek NDI SDK which can be downloaded for free form [here](https://www.newtek.com/ndi/sdk/)
 * Gem library is now required for _gem_ndisender.cpp_ compilation
 
-##### Compilation
+#### Compilation
 * In main _CMakeLists.txt_ file edit configuration variables so that necessary libraries and headers can be found durig compilation
 * Execute following commands in root directory of pd_ndi:
     ```$xslt
     cmake .
     make
     ```
-    Precompiled Windows and Mac library can be downloaded from github's releases tab.
+    Precompiled Windows and Mac binaries can be downloaded from github's releases tab.
 
-##### Installation
+#### Installation
 * Copy _pd_ndi_ file from _bin_ directory to your _externals_ directory where all tour externals are located
 * Add pd_ndi to the list of libraries loaded by Pure Data at startup (_File_ menu -> _preferences_ -> _startup_ -> _new_ -> type _pd_ndi_ -> _ok_ -> _ok_ -> DONE)
 
 
-##### Have in mind that:
+#### Have in mind that:
 * NDI library file must be visible for pd_ndi also after compilation. Easiest way to make it so is to copy it to the installation folder of pd_ndi.
 * Gem has to be added to the library list before pd_ndi
 
-### Usage
-
+### Objects
 * #### _[ndisender]_
 
     [_ndisender_] connected to [_gemhead_] will transmit what's before it in Gem's render chain.
     In case you are familiar with syphonserver for Gem, ndisender will work the same way.
+    
+* #### _[ndireceiver]_  (unstable)
+
+* #### _[ndisourcefinder]_ 
 
 * #### _[gl_ndisender]_
 
@@ -56,4 +59,3 @@ Remember to set dimensions of NDI frame by sending _[dimen $width $height (_  to
 * provide more NDI configuration options to PD object
 * implement sender as Gem's record plugin
 * implement audio transmission
-* ndi receiver

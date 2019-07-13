@@ -32,4 +32,4 @@ void gl_ndisender_send_texture_2d(t_gl_ndisender *gl_ndisender, t_floatarg tex);
 
 void gl_ndisender_post_size(int width, int height);
 
-void setup_gl_ndisender();
+void gl_ndisender_setup();
