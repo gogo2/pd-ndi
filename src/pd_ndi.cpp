@@ -6,8 +6,13 @@
 #include "gl_ndisender.h"
 #include "sourcefinder.h"
 
-extern "C" void pd_ndi_setup() {
+extern "C" void ndisender_setup();
+//
+extern "C" void ndireceiver_setup();
 
+extern "C" void pd_ndi_setup() {
+    ndisender_setup();
+    ndireceiver_setup();
     setup_gl_ndisender();
     setup_ndisourcefinder();
 

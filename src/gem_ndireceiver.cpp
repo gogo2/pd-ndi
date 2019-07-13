@@ -33,6 +33,7 @@ namespace pdndi {
 
     void ndireceiver::render(GemState *state) {
         auto result = ndi_receiver_.receive_frame();
+        pix_block_.newimage = false;
         if (result.first) {
             auto ndi_frame = ndi_receiver_.NDI_video_frame();
             if (ndi_frame.xres != pix_block_.image.xsize || ndi_frame.xres != pix_block_.image.ysize) {
@@ -72,8 +73,8 @@ namespace pdndi {
             }
 
             pix_block_.newimage = true;
-            state->set(GemState::_PIX, &pix_block_);
         }
+        state->set(GemState::_PIX, &pix_block_);
 
         if (result.second) {}
 
@@ -87,11 +88,11 @@ namespace pdndi {
     void ndireceiver::post_sources() {
         std::ostringstream osstream;
         osstream << std::endl << ndi_receiver_.source_finder;
-        post("ndireceiver sources:");
-        post(osstream.str().c_str());
+        post("ndireceiver sources:\n %s", osstream.str().c_str());
     }
 
     void ndireceiver::set_source(uint32_t source) {
+        post("ndireceiver: new source: %d", source);
         ndi_receiver_.connect(source);
     }
 

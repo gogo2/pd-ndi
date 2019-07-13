@@ -27,13 +27,13 @@ bool NDIReceiver::find_sources() {
 
 void NDIReceiver::connect(uint32_t source) {
     if (source < source_finder.no_sources()) {
-        NDIlib_recv_connect(pNDI_recv_, source_finder.p_sources() + (source * sizeof(NDIlib_source_t)));
+        NDIlib_recv_connect(pNDI_recv_, source_finder.p_sources() + source);
     }
 }
 
 std::pair<bool, bool> NDIReceiver::receive_frame() {
     bool video = false, audio = false;
-    switch (NDIlib_recv_capture_v2(pNDI_recv_, &NDI_video_frame_, &NDI_audio_frame_, nullptr, 5000)) {
+    switch (NDIlib_recv_capture_v2(pNDI_recv_, &NDI_video_frame_, &NDI_audio_frame_, nullptr, 50)) {
         case NDIlib_frame_type_none:
             break;
         case NDIlib_frame_type_video:

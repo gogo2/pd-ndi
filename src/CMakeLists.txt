@@ -10,7 +10,6 @@ set(SRC_FILES
         gem_ndireceiver.cpp
         recordNDI.cpp
         sourcefinder.cpp
-
         )
 
 add_library(pd_ndi SHARED ${SRC_FILES})

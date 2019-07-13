@@ -10,7 +10,7 @@ namespace pdndi {
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpedantic"
 
-    CPPEXTERN_NEW(ndisender);
+    CPPEXTERN_NEW(ndisender)
 
 #pragma GCC diagnostic pop
 
