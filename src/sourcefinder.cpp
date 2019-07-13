@@ -18,9 +18,21 @@ void ndisourcefinder_delete(t_ndisourcefinder *ndisourcefinder) {
 void ndisourcefinder_bang(t_ndisourcefinder *ndisourcefinder) {
     ndisourcefinder->ndi_sourcefinder->find_sources();
     std::ostringstream osstream;
-    osstream << std::endl << ndisourcefinder->ndi_sourcefinder;
+    osstream << * ndisourcefinder->ndi_sourcefinder;
     post("ndisourcefinder sources:");
     post(osstream.str().c_str());
 }
 
 
+void setup_ndisourcefinder() {
+    ndisourcefinder_class = class_new(
+            gensym("ndisourcefinder"),
+            (t_newmethod) ndisourcefinder_new,
+            (t_method) ndisourcefinder_delete,
+            sizeof(t_ndisourcefinder),
+            CLASS_DEFAULT,
+            A_GIMME,
+            0);
+
+    class_addbang(ndisourcefinder_class, ndisourcefinder_bang);
+}

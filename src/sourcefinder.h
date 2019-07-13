@@ -20,4 +20,4 @@ void ndisourcefinder_delete(t_ndisourcefinder *ndisourcefinder);
 
 void ndisourcefinder_bang(t_ndisourcefinder *ndisourcefinder);
 
-
+void setup_ndisourcefinder();

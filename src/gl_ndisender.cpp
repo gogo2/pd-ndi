@@ -57,3 +57,21 @@ void gl_ndisender_post_size(int width, int height) {
     post("width: %d\n height: %d", width, height);
 }
 
+
+void setup_gl_ndisender(){
+    gl_ndisender_class = class_new(
+            gensym("gl_ndisender"),
+            (t_newmethod) gl_ndisender_new,
+            (t_method) gl_ndisender_delete,
+            sizeof(t_gl_ndisender),
+            CLASS_DEFAULT,
+            A_GIMME,
+            0);
+
+    class_addbang(gl_ndisender_class, gl_ndisender_bang);
+    class_addfloat(gl_ndisender_class, (t_method) gl_ndisender_send_texture_2d);
+    class_addmethod(gl_ndisender_class, (t_method) gl_ndisender_resize_screen, gensym("dimen"),
+                    A_DEFFLOAT, A_DEFFLOAT, 0);
+    class_addmethod(gl_ndisender_class, (t_method) gl_ndisender_set_framerate, gensym("fps"),
+                    A_DEFFLOAT, 0);
+}
