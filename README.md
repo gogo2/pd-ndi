@@ -29,6 +29,8 @@ is a software standard for broadcasting high quality video and audio over networ
 cmake ../ -DPD_INSTALL_DIR=path/to/pd -DGEM_EXTERN_DIR=path/to/gem
 ``` 
 
+Only Windows and Mac are currently supported in CMake scripts. On Linux you have to manually adjust variables.
+
 Precompiled Windows and Mac binaries can be downloaded from github's releases tab.
 
 #### Installation

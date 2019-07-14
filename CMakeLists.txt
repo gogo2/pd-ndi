@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project(pd_ndi VERSION 0.3.4)
+project(pd_ndi VERSION 0.5.0)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 #set(CMAKE_VERBOSE_MAKEFILE on)
