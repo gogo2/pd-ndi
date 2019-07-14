@@ -23,6 +23,22 @@ elseif (UNIx)
     set_target_properties(pd_ndi PROPERTIES SUFFIX ".pd_linux")
 endif ()
 
+find_package(OpenGL)
+find_package(NDI REQUIRED)
+find_package(PD REQUIRED)
+find_package(GEM REQUIRED)
+
+target_compile_options(pd_ndi PRIVATE $<$<CXX_COMPILER_ID:GNU>:-O3 -pedantic -Wall -static-libstdc++>)
+
+set_target_properties(pd_ndi PROPERTIES CXX_STANDARD 11)
+
+target_include_directories(pd_ndi PRIVATE
+        ${PROJECT_SOURCE_DIR}/../lib/
+        ${NDI_INCLUDE_DIRS}
+        ${PD_INCLUDE_DIRS}
+        ${GEM_INCLUDE_DIRS}
+        )
+
 target_link_libraries(pd_ndi PRIVATE
         pd_ndi_glew
         ${OPENGL_gl_LIBRARY}
