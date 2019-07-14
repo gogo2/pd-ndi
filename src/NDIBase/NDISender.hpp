@@ -11,7 +11,7 @@
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
-#include <NDI/Processing.NDI.Lib.h>
+#include <Processing.NDI.Lib.h>
 
 #pragma GCC diagnostic pop
 

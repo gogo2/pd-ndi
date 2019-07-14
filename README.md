@@ -13,7 +13,7 @@ is a software standard for broadcasting high quality video and audio over networ
 #### Requirements
 * Building process of pd_ndi is managed by [CMake](https://cmake.org/)
 * Pd_ndi depends on Newtek NDI SDK which can be downloaded for free form [here](https://www.newtek.com/ndi/sdk/)
-* Gem library is now required for _gem_ndisender.cpp_ compilation
+* Gem library is now required for compilation
 
 #### Compilation
 * In main _CMakeLists.txt_ file edit configuration variables so that necessary libraries and headers can be found durig compilation
