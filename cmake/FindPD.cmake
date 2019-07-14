@@ -4,8 +4,10 @@
 
 include(ext/LibFindMacros)
 
-if (WIN32 OR APPLE)
+if (WIN3)
     set(PD_BASE_DIR ${PD_INSTALL_DIR})
+elseif (APPLE)
+    set(PD_BASE_DIR ${PD_INSTALL_DIR}/Contents/Resources)
 else ()
 endif ()
 

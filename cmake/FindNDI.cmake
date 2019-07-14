@@ -18,6 +18,7 @@ elseif (APPLE)
     set(NDI_LIB_NAME ndi.3)
     set(NDI_BASE_DIR "/NewTek NDI SDK")
 else ()
+    set(NDI_LIB_NAME ndi)
 endif ()
 
 find_path(NDI_INCLUDE_DIR
