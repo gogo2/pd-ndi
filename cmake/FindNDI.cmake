@@ -16,6 +16,7 @@ if (WIN32)
     set(NDI_BASE_DIR $ENV{NDI_SDK_DIR})
 elseif (APPLE)
     set(NDI_LIB_NAME ndi.3)
+    set(NDI_BASE_DIR "NewTek NDI SDK")
 else ()
 endif ()
 

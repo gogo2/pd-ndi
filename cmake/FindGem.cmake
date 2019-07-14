@@ -6,9 +6,8 @@ include(ext/LibFindMacros)
 
 find_package(PD)
 
-if (WIN32)
+if (WIN32 OR APPLE)
     set(GEM_BASE_DIR ${GEM_EXTERN_DIR})
-elseif (APPLE)
 else ()
 endif ()
 
