@@ -5,7 +5,7 @@
 include(ext/LibFindMacros)
 
 if (WIN32)
-    set(PD_BASE_DIR "C:/bin/Pd-0.49-0")
+    set(PD_BASE_DIR ${PD_INSTALL_DIR})
 elseif (APPLE)
 else ()
 endif ()
@@ -23,7 +23,6 @@ find_library(PD_LIBRARY
         PATHS
         ${PD_BASE_DIR}/bin
         )
-
 
 set(PD_PROCESS_INCLUDES PD_INCLUDE_DIR)
 set(PD_PROCESS_LIBS PD_LIBRARY)

@@ -10,19 +10,20 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 if (APPLE)
     set(CMAKE_SHARED_LIBRARY_CREATE_CXX_FLAGS "${CMAKE_SHARED_LIBRARY_CREATE_CXX_FLAGS} -undefined dynamic_lookup")
-    set(GEM_LIB_NAME)
-else ()
-    set(GEM_LIB_NAME Gem)
 endif ()
 
 
-# PD and NDI libraries configuration BEGIN
-set(GEM_LIB_DIR ${PROJECT_SOURCE_DIR}/../_lib/lib)
-set(GEM_LIB_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/../_lib/include/Gem)
-# END PD and NDI libraries configuration
+set(PD_INSTALL_DIR "C:/bin/Pd-0.49-0" CACHE PATH "Installation direcotry of pd")
+set(GEM_EXTERN_DIR "C:/Users/$ENV{USERNAME}/Documents/Pd/externals/Gem" CACHE PATH "Directory containing pd Gem")
 
-include_directories(${GEM_LIB_INCLUDE_DIR})
-link_directories(${GEM_LIB_DIR})
+find_package(OpenGL)
+find_package(NDI REQUIRED)
+find_package(PD REQUIRED)
+find_package(GEM REQUIRED)
+
+include_directories(${NDI_INCLUDE_DIRS})
+include_directories(${PD_INCLUDE_DIRS})
+include_directories(${GEM_INCLUDE_DIRS})
 
 include_directories(${PROJECT_SOURCE_DIR}/lib/)
 add_subdirectory(src)

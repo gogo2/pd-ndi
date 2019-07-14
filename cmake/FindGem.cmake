@@ -6,20 +6,27 @@ include(ext/LibFindMacros)
 
 find_package(PD)
 
+if (WIN32)
+    set(GEM_BASE_DIR ${GEM_EXTERN_DIR})
+elseif (APPLE)
+else ()
+endif ()
+
 find_path(GEM_INCLUDE_DIR
         NAMES
         GemBase.h
         PATHS
-        ${GEM_BASE_DIR}
+        ${GEM_BASE_DIR}/include/Gem/Base
         )
-
 
 find_library(GEM_LIBRARY
         NAMES
-        ${GEM_LIB_NAME}
+        Gem
         PATHS
         ${GEM_BASE_DIR}
         )
+
+get_filename_component(GEM_INCLUDE_DIR ${GEM_INCLUDE_DIR} DIRECTORY)
 
 set(GEM_PROCESS_INCLUDES GEM_INCLUDE_DIR)
 set(GEM_PROCESS_LIBS GEM_LIBRARY)

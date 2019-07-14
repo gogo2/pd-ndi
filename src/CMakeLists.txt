@@ -14,10 +14,6 @@ set(SRC_FILES
 
 add_library(pd_ndi SHARED ${SRC_FILES})
 
-find_package(OpenGL)
-find_package(NDI REQUIRED)
-find_package(PD REQUIRED)
-
 set_target_properties(pd_ndi PROPERTIES PREFIX "")
 if (WIN32)
     set_target_properties(pd_ndi PROPERTIES SUFFIX ".dll")
@@ -27,15 +23,12 @@ elseif (UNIx)
     set_target_properties(pd_ndi PROPERTIES SUFFIX ".pd_linux")
 endif ()
 
-include_directories(${NDI_INCLUDE_DIRS})
-include_directories(${PD_INCLUDE_DIRS})
-
 target_link_libraries(pd_ndi PRIVATE
         pd_ndi_glew
         ${OPENGL_gl_LIBRARY}
         ${NDI_LIBRARIES}
         ${PD_LIBRARIES}
-        ${GEM_LIB_NAME}
+        ${GEM_LIBRARIES}
         )
 
 
