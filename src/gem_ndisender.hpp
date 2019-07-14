@@ -9,7 +9,7 @@
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpedantic"
 
-#include <Gem/Base/GemBase.h>
+#include <Base/GemBase.h>
 
 #pragma GCC diagnostic pop
 

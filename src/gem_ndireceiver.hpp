@@ -9,9 +9,9 @@
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpedantic"
 
-#include <Gem/Base/GemBase.h>
-#include "Gem/Image.h"
-#include "Gem/State.h"
+#include <Base/GemBase.h>
+#include <Gem/Image.h>
+#include <Gem/State.h>
 
 #pragma GCC diagnostic pop
 

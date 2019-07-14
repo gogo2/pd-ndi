@@ -10,23 +10,17 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 if (APPLE)
     set(CMAKE_SHARED_LIBRARY_CREATE_CXX_FLAGS "${CMAKE_SHARED_LIBRARY_CREATE_CXX_FLAGS} -undefined dynamic_lookup")
-    set(PD_LIB_NAME)
     set(GEM_LIB_NAME)
 else ()
-    set(PD_LIB_NAME pd)
     set(GEM_LIB_NAME Gem)
 endif ()
 
 
 # PD and NDI libraries configuration BEGIN
-set(PD_LIB_DIR ${PROJECT_SOURCE_DIR}/../_lib/lib)
-set(PD_LIB_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/../_lib/include)
 set(GEM_LIB_DIR ${PROJECT_SOURCE_DIR}/../_lib/lib)
 set(GEM_LIB_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/../_lib/include/Gem)
 # END PD and NDI libraries configuration
 
-include_directories(${PD_LIB_INCLUDE_DIR})
-link_directories(${PD_LIB_DIR})
 include_directories(${GEM_LIB_INCLUDE_DIR})
 link_directories(${GEM_LIB_DIR})
 
