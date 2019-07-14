@@ -17,6 +17,8 @@ NDIReceiver::NDIReceiver() : source_finder{}, pNDI_recv_(nullptr), NDI_video_fra
 }
 
 NDIReceiver::~NDIReceiver() {
+    NDIlib_recv_free_video_v2(pNDI_recv_, &NDI_video_frame_);
+    NDIlib_recv_free_audio_v2(pNDI_recv_, &NDI_audio_frame_);
     NDIlib_recv_destroy(pNDI_recv_);
     NDIlib_destroy();
 }
@@ -37,11 +39,9 @@ std::pair<bool, bool> NDIReceiver::receive_frame() {
         case NDIlib_frame_type_none:
             break;
         case NDIlib_frame_type_video:
-            NDIlib_recv_free_video_v2(pNDI_recv_, &NDI_video_frame_);
             video = true;
             break;
         case NDIlib_frame_type_audio:
-            NDIlib_recv_free_audio_v2(pNDI_recv_, &NDI_audio_frame_);
             audio = true;
             break;
     }

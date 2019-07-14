@@ -36,7 +36,7 @@ namespace pdndi {
         pix_block_.newimage = false;
         if (result.first) {
             auto ndi_frame = ndi_receiver_.NDI_video_frame();
-            if (ndi_frame.xres != pix_block_.image.xsize || ndi_frame.xres != pix_block_.image.ysize) {
+            if (ndi_frame.xres != pix_block_.image.xsize || ndi_frame.yres != pix_block_.image.ysize) {
                 pix_block_.image.xsize = ndi_frame.xres;
                 pix_block_.image.ysize = ndi_frame.yres;
                 pix_block_.image.reallocate();

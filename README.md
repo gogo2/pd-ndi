@@ -16,13 +16,20 @@ is a software standard for broadcasting high quality video and audio over networ
 * Gem library is now required for compilation
 
 #### Compilation
-* In main _CMakeLists.txt_ file edit configuration variables so that necessary libraries and headers can be found durig compilation
 * Execute following commands in root directory of pd_ndi:
     ```$xslt
-    cmake .
+    mkdir build
+    cd build
+    cmake ../
     make
     ```
-    Precompiled Windows and Mac binaries can be downloaded from github's releases tab.
+* You can specify pd end Gem's installation directories by providing `PD_INSTALL_DIR` and `GEM_EXTERN_DIR` options to CMake
+
+```$xslt
+cmake ../ -DPD_INSTALL_DIR=path/to/pd -DGEM_EXTERN_DIR=path/to/gem
+``` 
+
+Precompiled Windows and Mac binaries can be downloaded from github's releases tab.
 
 #### Installation
 * Copy _pd_ndi_ file from _bin_ directory to your _externals_ directory where all tour externals are located
@@ -39,7 +46,7 @@ is a software standard for broadcasting high quality video and audio over networ
     [_ndisender_] connected to [_gemhead_] will transmit what's before it in Gem's render chain.
     In case you are familiar with syphonserver for Gem, ndisender will work the same way.
     
-* #### _[ndireceiver]_  (unstable)
+* #### _[ndireceiver]_ 
     Passes data received from NDI source as pix data. Works similarly to e.g. [_pix_image_] 
 
 * #### _[ndisourcefinder]_
