@@ -6,9 +6,11 @@ include(ext/LibFindMacros)
 
 find_package(PD)
 
-if (WIN32 OR APPLE)
+if (WIN32)
     set(GEM_BASE_DIR ${GEM_EXTERN_DIR})
-else ()
+elseif (APPLE)
+    set(GEM_BASE_DIR ${GEM_EXTERN_DIR})
+    list(APPEND CMAKE_FIND_LIBRARY_SUFFIXES ".pd_darwin")
 endif ()
 
 find_path(GEM_INCLUDE_DIR
