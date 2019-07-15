@@ -20,4 +20,5 @@ set(PD_INSTALL_DIR ${PD_INSTALL_DIR_DEFAULT} CACHE PATH "Installation direcotry 
 set(GEM_EXTERN_DIR ${GEM_EXTERN_DIR_DEFAULT} CACHE PATH "Directory containing pd Gem")
 
 add_subdirectory(src)
+add_subdirectory(src/NDIBase)
 add_subdirectory(lib/glew)

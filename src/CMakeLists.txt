@@ -1,9 +1,6 @@
 project(pd_ndi_main)
 
 set(SRC_FILES
-        NDIBase/NDISender.cpp
-        NDIBase/NDISourceFinder.cpp
-        NDIBase/NDIReceiver.cpp
         pd_ndi.cpp
         gl_ndisender.cpp
         gem_ndisender.cpp
@@ -24,7 +21,6 @@ elseif (UNIx)
 endif ()
 
 find_package(OpenGL)
-find_package(NDI REQUIRED)
 find_package(PD REQUIRED)
 find_package(GEM REQUIRED)
 
@@ -34,15 +30,14 @@ set_target_properties(pd_ndi PROPERTIES CXX_STANDARD 11)
 
 target_include_directories(pd_ndi PRIVATE
         ${PROJECT_SOURCE_DIR}/../lib/
-        ${NDI_INCLUDE_DIRS}
         ${PD_INCLUDE_DIRS}
         ${GEM_INCLUDE_DIRS}
         )
 
 target_link_libraries(pd_ndi PRIVATE
         pd_ndi_glew
+        ndi_base
         ${OPENGL_gl_LIBRARY}
-        ${NDI_LIBRARIES}
         ${PD_LIBRARIES}
         ${GEM_LIBRARIES}
         )
