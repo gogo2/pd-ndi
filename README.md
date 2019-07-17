@@ -31,7 +31,7 @@ cmake ../ -DPD_INSTALL_DIR=path/to/pd -DGEM_EXTERN_DIR=path/to/gem
 
 Only Windows and Mac are currently supported in CMake scripts. On Linux you have to manually adjust variables.
 
-Precompiled Windows and Mac binaries can be downloaded from github's releases tab.
+Precompiled Windows, Mac and Linux binaries can be downloaded from github's releases tab.
 
 #### Installation
 * Copy _pd_ndi_ file from _bin_ directory to your _externals_ directory where all tour externals are located
