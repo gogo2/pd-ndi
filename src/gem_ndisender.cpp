@@ -4,6 +4,7 @@
 //
 
 #include <glew/glew.h>
+#include <cstring>
 #include "gem_ndisender.hpp"
 
 namespace pdndi {

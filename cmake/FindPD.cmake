@@ -8,7 +8,8 @@ if (WIN32)
     set(PD_BASE_DIR ${PD_INSTALL_DIR})
 elseif (APPLE)
     set(PD_BASE_DIR ${PD_INSTALL_DIR}/Contents/Resources)
-else ()
+elseif (UNIX)
+    set(PD_BASE_DIR ${PD_INSTALL_DIR})
 endif ()
 
 find_path(PD_INCLUDE_DIR
@@ -18,7 +19,7 @@ find_path(PD_INCLUDE_DIR
         ${PD_BASE_DIR}/src
         )
 
-if (NOT APPLE)
+if (WIN32)
     find_library(PD_LIBRARY
             NAMES
             pd

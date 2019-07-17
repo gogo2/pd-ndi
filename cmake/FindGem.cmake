@@ -8,24 +8,26 @@ find_package(PD)
 
 if (WIN32 OR APPLE)
     set(GEM_BASE_DIR ${GEM_EXTERN_DIR})
-else()
+    set(GEM_INCLUDE_BASE_DIR ${GEM_BASE_DIR}/include/Gem)
+elseif (UNIX)
+    set(GEM_INCLUDE_BASE_DIR ${GEM_EXTERN_DIR})
 endif ()
 
 find_path(GEM_INCLUDE_DIR
         NAMES
         GemBase.h
         PATHS
-        ${GEM_BASE_DIR}/include/Gem/Base
+        ${GEM_INCLUDE_BASE_DIR}/Base
         )
 
-if(NOT APPLE)
-find_library(GEM_LIBRARY
-        NAMES
-        Gem
-        PATHS
-        ${GEM_BASE_DIR}
-        )
-endif()
+if (WIN32)
+    find_library(GEM_LIBRARY
+            NAMES
+            Gem
+            PATHS
+            ${GEM_BASE_DIR}
+            )
+endif ()
 
 get_filename_component(GEM_INCLUDE_DIR ${GEM_INCLUDE_DIR} DIRECTORY)
 
