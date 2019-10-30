@@ -11,6 +11,8 @@
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
+#define PROCESSINGNDILIB_DEPRECATED
+
 #include <Processing.NDI.Lib.h>
 
 #pragma GCC diagnostic pop
@@ -32,7 +34,7 @@ public:
 
     ~NDISourceFinder();
 
-    bool find_sources();
+    bool find_sources() noexcept;
 
     const NDIlib_source_t *p_sources() const noexcept;
 

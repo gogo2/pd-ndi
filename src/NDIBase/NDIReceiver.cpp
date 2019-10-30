@@ -23,26 +23,30 @@ NDIReceiver::~NDIReceiver() {
     NDIlib_destroy();
 }
 
-bool NDIReceiver::find_sources() {
+bool NDIReceiver::find_sources() noexcept {
     return source_finder.find_sources();
 }
 
-void NDIReceiver::connect(uint32_t source) {
+void NDIReceiver::connect(uint32_t source) noexcept {
     if (source < source_finder.no_sources()) {
         NDIlib_recv_connect(pNDI_recv_, source_finder.p_sources() + source);
     }
 }
 
-std::pair<bool, bool> NDIReceiver::receive_frame() {
+std::pair<bool, bool> NDIReceiver::receive_frame() noexcept {
     bool video = false, audio = false;
     switch (NDIlib_recv_capture_v2(pNDI_recv_, &NDI_video_frame_, &NDI_audio_frame_, nullptr, 50)) {
-        case NDIlib_frame_type_none:
-            break;
         case NDIlib_frame_type_video:
             video = true;
             break;
         case NDIlib_frame_type_audio:
             audio = true;
+            break;
+        case NDIlib_frame_type_none:
+        case NDIlib_frame_type_error:
+        case NDIlib_frame_type_metadata:
+        case NDIlib_frame_type_status_change:
+        case NDIlib_frame_type_max:
             break;
     }
     return {video, audio};

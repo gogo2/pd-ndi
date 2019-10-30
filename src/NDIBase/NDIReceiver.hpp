@@ -11,6 +11,8 @@
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
+#define PROCESSINGNDILIB_DEPRECATED
+
 #include <Processing.NDI.Lib.h>
 
 #pragma GCC diagnostic pop
@@ -32,15 +34,15 @@ public:
 
     ~NDIReceiver();
 
-    bool find_sources();
+    bool find_sources() noexcept;
 
-    void connect(uint32_t source);
+    void connect(uint32_t source) noexcept;
 
-    std::pair<bool, bool> receive_frame();
+    std::pair<bool, bool> receive_frame() noexcept;
 
-    const NDIlib_video_frame_v2_t & NDI_video_frame() noexcept;
+    const NDIlib_video_frame_v2_t &NDI_video_frame() noexcept;
 
-    const NDIlib_audio_frame_v2_t & NDI_audio_frame() noexcept;
+    const NDIlib_audio_frame_v2_t &NDI_audio_frame() noexcept;
 
     NDISourceFinder source_finder;
 

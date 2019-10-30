@@ -11,6 +11,7 @@
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
+#define PROCESSINGNDILIB_DEPRECATED
 #include <Processing.NDI.Lib.h>
 
 #pragma GCC diagnostic pop
@@ -33,7 +34,7 @@ public:
 
     ~NDISender();
 
-    void send_frame();
+    void send_frame() noexcept ;
 
     uint8_t *p_video_frame_data() noexcept;
 

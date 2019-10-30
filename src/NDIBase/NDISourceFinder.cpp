@@ -21,7 +21,7 @@ NDISourceFinder::~NDISourceFinder() {
     NDIlib_destroy();
 }
 
-bool NDISourceFinder::find_sources() {
+bool NDISourceFinder::find_sources() noexcept {
     NDIlib_find_wait_for_sources(pNDI_find_, 1000);
     p_sources_ = NDIlib_find_get_current_sources(pNDI_find_, &no_sources_);
     return no_sources_ > 0;

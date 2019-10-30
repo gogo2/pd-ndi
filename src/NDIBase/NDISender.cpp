@@ -35,7 +35,7 @@ uint8_t *NDISender::p_video_frame_data() noexcept {
     return NDI_video_frame_.p_data;
 }
 
-void NDISender::send_frame() {
+void NDISender::send_frame() noexcept {
     NDIlib_send_send_video_v2(pNDI_send_, &NDI_video_frame_);
 }
 
