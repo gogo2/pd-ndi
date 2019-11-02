@@ -38,7 +38,7 @@ public:
 
     void connect(uint32_t source) noexcept;
 
-    std::pair<bool, bool> receive_frame() noexcept;
+    NDIlib_frame_type_e receive_frame() noexcept;
 
     const NDIlib_video_frame_v2_t &NDI_video_frame() noexcept;
 

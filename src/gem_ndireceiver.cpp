@@ -34,7 +34,7 @@ namespace pdndi {
     void ndireceiver::render(GemState *state) {
         auto result = ndi_receiver_.receive_frame();
         pix_block_.newimage = false;
-        if (result.first) {
+        if (result == NDIlib_frame_type_video) {
             auto ndi_frame = ndi_receiver_.NDI_video_frame();
             if (ndi_frame.xres != pix_block_.image.xsize || ndi_frame.yres != pix_block_.image.ysize) {
                 pix_block_.image.xsize = ndi_frame.xres;
@@ -44,14 +44,10 @@ namespace pdndi {
 
             switch (ndi_frame.FourCC) {
                 case NDIlib_FourCC_type_BGRA:
-                    pix_block_.image.fromBGRA(ndi_frame.p_data);
-                    break;
                 case NDIlib_FourCC_type_BGRX:
                     pix_block_.image.fromBGRA(ndi_frame.p_data);
                     break;
                 case NDIlib_FourCC_type_RGBA:
-                    pix_block_.image.fromRGBA(ndi_frame.p_data);
-                    break;
                 case NDIlib_FourCC_type_RGBX:
                     pix_block_.image.fromRGBA(ndi_frame.p_data);
                     break;
@@ -73,11 +69,9 @@ namespace pdndi {
             }
 
             pix_block_.newimage = true;
-        }
+        } else {}
+
         state->set(GemState::_PIX, &pix_block_);
-
-        if (result.second) {}
-
     }
 
     void ndireceiver::find_sources() {

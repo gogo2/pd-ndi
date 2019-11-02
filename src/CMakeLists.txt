@@ -28,7 +28,7 @@ find_package(NDI REQUIRED)
 find_package(PD REQUIRED)
 find_package(Gem REQUIRED)
 
-target_compile_options(pd_ndi PRIVATE $<$<CXX_COMPILER_ID:GNU>:-O3 -pedantic -Wall -static-libstdc++>)
+target_compile_options(pd_ndi PRIVATE $<$<CXX_COMPILER_ID:GNU>:-O3 -pedantic -Wall -Wextra -static-libstdc++>)
 
 set_target_properties(pd_ndi PROPERTIES CXX_STANDARD 11)
 

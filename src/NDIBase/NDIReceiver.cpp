@@ -33,23 +33,8 @@ void NDIReceiver::connect(uint32_t source) noexcept {
     }
 }
 
-std::pair<bool, bool> NDIReceiver::receive_frame() noexcept {
-    bool video = false, audio = false;
-    switch (NDIlib_recv_capture_v2(pNDI_recv_, &NDI_video_frame_, &NDI_audio_frame_, nullptr, 50)) {
-        case NDIlib_frame_type_video:
-            video = true;
-            break;
-        case NDIlib_frame_type_audio:
-            audio = true;
-            break;
-        case NDIlib_frame_type_none:
-        case NDIlib_frame_type_error:
-        case NDIlib_frame_type_metadata:
-        case NDIlib_frame_type_status_change:
-        case NDIlib_frame_type_max:
-            break;
-    }
-    return {video, audio};
+NDIlib_frame_type_e NDIReceiver::receive_frame() noexcept {
+    return NDIlib_recv_capture_v2(pNDI_recv_, &NDI_video_frame_, &NDI_audio_frame_, nullptr, 50);
 }
 
 const NDIlib_video_frame_v2_t &NDIReceiver::NDI_video_frame() noexcept {
