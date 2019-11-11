@@ -82,22 +82,22 @@
 #define __GLEW_H__
 
 #if defined(__gl_h_) || defined(__GL_H__) || defined(_GL_H) || defined(__X_GL_H)
-#error gl.h included before glew.h
+#error gl.h included before GL.h
 #endif
 #if defined(__gl2_h_)
-#error gl2.h included before glew.h
+#error gl2.h included before GL.h
 #endif
 #if defined(__gltypes_h_)
-#error gltypes.h included before glew.h
+#error gltypes.h included before GL.h
 #endif
 #if defined(__REGAL_H__)
-#error Regal.h included before glew.h
+#error Regal.h included before GL.h
 #endif
 #if defined(__glext_h_) || defined(__GLEXT_H_)
-#error glext.h included before glew.h
+#error glext.h included before GL.h
 #endif
 #if defined(__gl_ATI_h_)
-#error glATI.h included before glew.h
+#error glATI.h included before GL.h
 #endif
 
 #define __gl_h_

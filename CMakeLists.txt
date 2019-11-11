@@ -26,5 +26,5 @@ if(POLICY CMP0072)
 	cmake_policy(SET CMP0072 NEW)
 endif()
 
+add_subdirectory(lib/GL)
 add_subdirectory(src)
-add_subdirectory(lib/glew)

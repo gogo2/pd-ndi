@@ -7,7 +7,7 @@
 #include <memory.h>
 #include <cstdlib>
 #include <string>
-#include "glew/glew.h"
+#include "GL/glew.h"
 #include "m_pd.h"
 #include "NDIBase/NDISender.hpp"
 
