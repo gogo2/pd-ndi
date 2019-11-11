@@ -10,7 +10,7 @@ if (WIN32 OR APPLE)
     set(GEM_BASE_DIR ${GEM_EXTERN_DIR})
     set(GEM_INCLUDE_BASE_DIR ${GEM_BASE_DIR}/include/Gem)
 elseif (UNIX)
-    set(GEM_INCLUDE_BASE_DIR ${GEM_EXTERN_DIR})
+    set(GEM_INCLUDE_BASE_DIR "/usr/include/Gem")
 endif ()
 
 find_path(GEM_INCLUDE_DIR

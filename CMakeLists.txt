@@ -22,5 +22,9 @@ endif ()
 set(PD_INSTALL_DIR ${PD_INSTALL_DIR_DEFAULT} CACHE PATH "Installation direcotry of pd")
 set(GEM_EXTERN_DIR ${GEM_EXTERN_DIR_DEFAULT} CACHE PATH "Directory containing Gem")
 
+if(POLICY CMP0072)
+	cmake_policy(SET CMP0072 NEW)
+endif()
+
 add_subdirectory(src)
 add_subdirectory(lib/glew)
