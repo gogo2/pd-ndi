@@ -24,7 +24,7 @@ is a software standard for broadcasting high quality video and audio over networ
     cmake ../
     make
     ```
-* You can specify non-default pd Gem's and NDI SDK installation directories by providing `PD_INSTALL_DIR`,  `GEM_EXTERN_DIR` and - linux only -`NDI_INSTALL_DIR` options to CMake
+* You can specify non-default pd Gem's and NDI SDK installation directories by providing `PD_INSTALL_DIR`,  `GEM_EXTERN_DIR` and - on linux and mac -`NDI_INSTALL_DIR` options to CMake
 
 ```$xslt
 cmake ../ -DPD_INSTALL_DIR=path/to/pd -DGEM_EXTERN_DIR=path/to/gem
