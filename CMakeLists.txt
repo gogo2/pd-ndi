@@ -16,10 +16,11 @@ elseif (APPLE)
 elseif (UNIX)
     set(PD_INSTALL_DIR_DEFAULT "/usr/include/pd")
     set(GEM_EXTERN_DIR_DEFAULT "/usr/include/Gem")
-    set(NDI_INSTALL_DIR "/home/$ENV{USER}/NDI SDK for Linux" CACHE PATH "Directory containing NDI SDK")
+    set(NDI_INSTALL_DIR_DEFAULT "/home/$ENV{USER}/NDI SDK for Linux" CACHE PATH "Directory containing NDI SDK")
+    set(NDI_INSTALL_DIR ${NDI_INSTALL_DIR_DEFAULT} CACHE PATH "Installation directory of NDI SDK")
 endif ()
 
-set(PD_INSTALL_DIR ${PD_INSTALL_DIR_DEFAULT} CACHE PATH "Installation direcotry of pd")
+set(PD_INSTALL_DIR ${PD_INSTALL_DIR_DEFAULT} CACHE PATH "Installation directory of pd")
 set(GEM_EXTERN_DIR ${GEM_EXTERN_DIR_DEFAULT} CACHE PATH "Directory containing Gem")
 
 if(POLICY CMP0072)

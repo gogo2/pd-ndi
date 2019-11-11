@@ -14,6 +14,7 @@ is a software standard for broadcasting high quality video and audio over networ
 * Building process of pd_ndi is managed by [CMake](https://cmake.org/)
 * Pd_ndi depends on Newtek NDI SDK which can be downloaded for free form [here](https://www.newtek.com/ndi/sdk/)
 * Gem library is now required for compilation
+     
 
 #### Compilation
 * Execute following commands in root directory of pd_ndi:
@@ -23,13 +24,12 @@ is a software standard for broadcasting high quality video and audio over networ
     cmake ../
     make
     ```
-* You can specify pd end Gem's installation directories by providing `PD_INSTALL_DIR` and `GEM_EXTERN_DIR` options to CMake
+* You can specify non-default pd Gem's and NDI SDK installation directories by providing `PD_INSTALL_DIR`,  `GEM_EXTERN_DIR` and - linux only -`NDI_INSTALL_DIR` options to CMake
 
 ```$xslt
 cmake ../ -DPD_INSTALL_DIR=path/to/pd -DGEM_EXTERN_DIR=path/to/gem
 ``` 
-
-Only Windows and Mac are currently supported in CMake scripts. On Linux you have to manually adjust variables.
+* On Linux `gem-dev` package is required for compilation as it contains Gem header files.
 
 Precompiled Windows, Mac and Linux binaries can be downloaded from github's releases tab.
 
