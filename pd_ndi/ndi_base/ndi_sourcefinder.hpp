@@ -17,37 +17,41 @@
 
 #pragma GCC diagnostic pop
 
-class ndi_sourcefinder {
-public:
+namespace pdndi { namespace base {
 
-    ndi_sourcefinder();
+    class ndi_sourcefinder {
+    public:
 
-    ndi_sourcefinder(const ndi_sourcefinder &) = delete;
+        ndi_sourcefinder();
 
-    ndi_sourcefinder(const ndi_sourcefinder &&) = delete;
+        ndi_sourcefinder(const ndi_sourcefinder &) = delete;
 
-    ndi_sourcefinder &operator=(const ndi_sourcefinder &) = delete;
+        ndi_sourcefinder(const ndi_sourcefinder &&) = delete;
 
-    ndi_sourcefinder &operator=(const ndi_sourcefinder &&) = delete;
+        ndi_sourcefinder &operator=(const ndi_sourcefinder &) = delete;
 
-    friend std::ostream &operator<<(std::ostream &ostream, const ndi_sourcefinder &source_finder);
+        ndi_sourcefinder &operator=(const ndi_sourcefinder &&) = delete;
 
-    ~ndi_sourcefinder();
+        friend std::ostream &operator<<(std::ostream &ostream, const ndi_sourcefinder &source_finder);
 
-    bool find_sources() noexcept;
+        ~ndi_sourcefinder();
 
-    const NDIlib_source_t *p_sources() const noexcept;
+        bool find_sources() noexcept;
 
-    uint32_t no_sources() const noexcept;
+        const NDIlib_source_t *p_sources() const noexcept;
 
-
-private:
-    NDIlib_find_instance_t pNDI_find_;
-    uint32_t no_sources_;
-    const NDIlib_source_t *p_sources_;
+        uint32_t no_sources() const noexcept;
 
 
-};
+    private:
+        NDIlib_find_instance_t pNDI_find_;
+        uint32_t no_sources_;
+        const NDIlib_source_t *p_sources_;
+
+
+    };
+
+}}
 
 
 #endif //PD_NDI_NDI_SOURCEFINDER_HPP

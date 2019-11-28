@@ -50,7 +50,7 @@ namespace pdndi {
         pixBlock pix_block_;
         imageStruct gem_frame_;
 
-        ndi_receiver ndi_receiver_;
+        base::ndi_receiver ndi_receiver_;
 
     };
 

@@ -19,41 +19,44 @@
 
 #include "ndi_sourcefinder.hpp"
 
-class ndi_receiver final {
-public:
+namespace pdndi { namespace base {
 
-    ndi_receiver();
+    class ndi_receiver final {
+    public:
 
-    ndi_receiver(const ndi_receiver &) = delete;
+        ndi_receiver();
 
-    ndi_receiver(const ndi_receiver &&) = delete;
+        ndi_receiver(const ndi_receiver &) = delete;
 
-    ndi_receiver &operator=(const ndi_receiver &) = delete;
+        ndi_receiver(const ndi_receiver &&) = delete;
 
-    ndi_receiver &operator=(const ndi_receiver &&) = delete;
+        ndi_receiver &operator=(const ndi_receiver &) = delete;
 
-    ~ndi_receiver();
+        ndi_receiver &operator=(const ndi_receiver &&) = delete;
 
-    bool find_sources() noexcept;
+        ~ndi_receiver();
 
-    void connect(uint32_t source) noexcept;
+        bool find_sources() noexcept;
 
-    NDIlib_frame_type_e receive_frame() noexcept;
+        void connect(uint32_t source) noexcept;
 
-    const NDIlib_video_frame_v2_t &NDI_video_frame() noexcept;
+        NDIlib_frame_type_e receive_frame() noexcept;
 
-    const NDIlib_audio_frame_v2_t &NDI_audio_frame() noexcept;
+        const NDIlib_video_frame_v2_t &NDI_video_frame() noexcept;
 
-    ndi_sourcefinder source_finder;
+        const NDIlib_audio_frame_v2_t &NDI_audio_frame() noexcept;
 
-private:
+        ndi_sourcefinder source_finder;
 
-    NDIlib_recv_instance_t pNDI_recv_;
-    NDIlib_video_frame_v2_t NDI_video_frame_;
-    NDIlib_audio_frame_v2_t NDI_audio_frame_;
+    private:
+
+        NDIlib_recv_instance_t pNDI_recv_;
+        NDIlib_video_frame_v2_t NDI_video_frame_;
+        NDIlib_audio_frame_v2_t NDI_audio_frame_;
 
 
-};
+    };
 
+}}
 
 #endif //PD_NDI_NDI_RECEIVER_HPP

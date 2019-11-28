@@ -42,7 +42,7 @@ namespace pdndi {
 
     private:
 
-        ndi_sender ndi_sender_;
+        base::ndi_sender ndi_sender_;
         uint8_t *p_pixel_transfer_data;
 
     };

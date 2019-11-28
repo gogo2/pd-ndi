@@ -15,7 +15,7 @@ static t_class *gl_ndisender_class;
 
 struct t_gl_ndisender {
     t_object x_obj;
-    ndi_sender *ndi_sender;
+    pdndi::base::ndi_sender *ndi_sender;
 };
 
 void *gl_ndisender_new();

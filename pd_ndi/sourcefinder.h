@@ -11,7 +11,7 @@ static t_class *ndisourcefinder_class;
 
 struct t_ndisourcefinder {
     t_object x_obj;
-    ndi_sourcefinder *ndi_sourcefinder;
+    pdndi::base::ndi_sourcefinder *ndi_sourcefinder;
 };
 
 void *ndisourcefinder_new();

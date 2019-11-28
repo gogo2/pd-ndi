@@ -15,32 +15,36 @@
 
 #pragma GCC diagnostic pop
 
-class GEM_EXPORT recordNDI : public gem::plugins::record {
-public:
+namespace pdndi {
 
-    recordNDI();
+    class GEM_EXPORT recordNDI : public gem::plugins::record {
+    public:
 
-    std::vector<std::string> getCodecs() override;
+        recordNDI();
 
-    const std::string getCodecDescription(const std::string &codecname) override;
+        std::vector<std::string> getCodecs() override;
 
-    bool setCodec(const std::string &name) override;
+        const std::string getCodecDescription(const std::string &codecname) override;
 
-    bool enumProperties(gem::Properties &props) override;
+        bool setCodec(const std::string &name) override;
 
-    bool dialog() override;
+        bool enumProperties(gem::Properties &props) override;
 
-    bool start(const std::string &filename, gem::Properties &props) override;
+        bool dialog() override;
 
-    bool write(imageStruct *aStruct) override;
+        bool start(const std::string &filename, gem::Properties &props) override;
 
-    void stop() override;
+        bool write(imageStruct *aStruct) override;
 
-private:
+        void stop() override;
 
-    ndi_sender ndi_sender_;
+    private:
 
-};
+        base::ndi_sender ndi_sender_;
+
+    };
+
+}
 
 
 #endif //PD_NDI_RECORDNDI_HPP
