@@ -13,7 +13,7 @@
 
 #pragma GCC diagnostic pop
 
-#include "NDIBase/NDISender.hpp"
+#include "ndi_base/ndi_sender.hpp"
 
 namespace pdndi {
 
@@ -42,7 +42,7 @@ namespace pdndi {
 
     private:
 
-        NDISender ndi_sender_;
+        ndi_sender ndi_sender_;
         uint8_t *p_pixel_transfer_data;
 
     };

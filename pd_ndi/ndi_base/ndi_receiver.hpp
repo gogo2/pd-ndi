@@ -1,10 +1,10 @@
 //
-// file NDIReceiver.hpp
+// file ndi_receiver.hpp
 // Created by Bartosz Sobol
 //
 
-#ifndef PD_NDI_NDIRECEIVER_HPP
-#define PD_NDI_NDIRECEIVER_HPP
+#ifndef PD_NDI_NDI_RECEIVER_HPP
+#define PD_NDI_NDI_RECEIVER_HPP
 
 #include <cstddef>
 
@@ -17,22 +17,22 @@
 
 #pragma GCC diagnostic pop
 
-#include "NDISourceFinder.hpp"
+#include "ndi_sourcefinder.hpp"
 
-class NDIReceiver final {
+class ndi_receiver final {
 public:
 
-    NDIReceiver();
+    ndi_receiver();
 
-    NDIReceiver(const NDIReceiver &) = delete;
+    ndi_receiver(const ndi_receiver &) = delete;
 
-    NDIReceiver(const NDIReceiver &&) = delete;
+    ndi_receiver(const ndi_receiver &&) = delete;
 
-    NDIReceiver &operator=(const NDIReceiver &) = delete;
+    ndi_receiver &operator=(const ndi_receiver &) = delete;
 
-    NDIReceiver &operator=(const NDIReceiver &&) = delete;
+    ndi_receiver &operator=(const ndi_receiver &&) = delete;
 
-    ~NDIReceiver();
+    ~ndi_receiver();
 
     bool find_sources() noexcept;
 
@@ -44,7 +44,7 @@ public:
 
     const NDIlib_audio_frame_v2_t &NDI_audio_frame() noexcept;
 
-    NDISourceFinder source_finder;
+    ndi_sourcefinder source_finder;
 
 private:
 
@@ -56,4 +56,4 @@ private:
 };
 
 
-#endif //PD_NDI_NDIRECEIVER_HPP
+#endif //PD_NDI_NDI_RECEIVER_HPP

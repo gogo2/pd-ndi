@@ -1,10 +1,10 @@
 //
-// file NDISender.hpp
+// file ndi_sender.hpp
 // Created by Bartosz Sobol
 //
 
-#ifndef PD_NDI_NDISENDER_HPP
-#define PD_NDI_NDISENDER_HPP
+#ifndef PD_NDI_NDI_SENDER_HPP
+#define PD_NDI_NDI_SENDER_HPP
 
 #include <cstddef>
 
@@ -16,23 +16,23 @@
 
 #pragma GCC diagnostic pop
 
-class NDISender final {
+class ndi_sender final {
 
 public:
 
-    NDISender(int screen_width, int screen_height, int max_fps = 30);
+    ndi_sender(int screen_width, int screen_height, int max_fps = 30);
 
-    NDISender() = delete;
+    ndi_sender() = delete;
 
-    NDISender(const NDISender &) = delete;
+    ndi_sender(const ndi_sender &) = delete;
 
-    NDISender(const NDISender &&) = delete;
+    ndi_sender(const ndi_sender &&) = delete;
 
-    NDISender &operator=(const NDISender &) = delete;
+    ndi_sender &operator=(const ndi_sender &) = delete;
 
-    NDISender &operator=(const NDISender &&) = delete;
+    ndi_sender &operator=(const ndi_sender &&) = delete;
 
-    ~NDISender();
+    ~ndi_sender();
 
     void send_frame() noexcept ;
 
@@ -54,4 +54,4 @@ private:
 };
 
 
-#endif //PD_NDI_NDISENDER_HPP
+#endif //PD_NDI_NDI_SENDER_HPP

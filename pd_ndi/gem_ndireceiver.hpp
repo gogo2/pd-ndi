@@ -15,7 +15,7 @@
 
 #pragma GCC diagnostic pop
 
-#include "NDIBase/NDIReceiver.hpp"
+#include "ndi_base/ndi_receiver.hpp"
 
 
 namespace pdndi {
@@ -50,7 +50,7 @@ namespace pdndi {
         pixBlock pix_block_;
         imageStruct gem_frame_;
 
-        NDIReceiver ndi_receiver_;
+        ndi_receiver ndi_receiver_;
 
     };
 

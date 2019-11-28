@@ -9,13 +9,13 @@
 #include <string>
 #include "GL/glew.h"
 #include "m_pd.h"
-#include "NDIBase/NDISender.hpp"
+#include "ndi_base/ndi_sender.hpp"
 
 static t_class *gl_ndisender_class;
 
 struct t_gl_ndisender {
     t_object x_obj;
-    NDISender *ndi_sender;
+    ndi_sender *ndi_sender;
 };
 
 void *gl_ndisender_new();

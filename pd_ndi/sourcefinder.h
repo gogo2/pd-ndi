@@ -5,13 +5,13 @@
 
 #include <sstream>
 #include "m_pd.h"
-#include "NDIBase/NDISourceFinder.hpp"
+#include "ndi_base/ndi_sourcefinder.hpp"
 
 static t_class *ndisourcefinder_class;
 
 struct t_ndisourcefinder {
     t_object x_obj;
-    NDISourceFinder *ndi_sourcefinder;
+    ndi_sourcefinder *ndi_sourcefinder;
 };
 
 void *ndisourcefinder_new();

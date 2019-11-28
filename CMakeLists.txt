@@ -29,4 +29,4 @@ if(POLICY CMP0072)
 endif()
 
 add_subdirectory(lib/GL)
-add_subdirectory(src)
+add_subdirectory(pd_ndi)

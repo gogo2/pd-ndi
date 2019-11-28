@@ -1,14 +1,14 @@
 //
-// file NDISender.cpp
+// file ndi_sender.cpp
 // Created by Bartosz Sobol
 //
 
-#include "NDISender.hpp"
+#include "ndi_sender.hpp"
 #include <iostream>
 
 
-NDISender::NDISender(const int screen_width, const int screen_height, const int max_fps) : pNDI_send_(nullptr),
-                                                                                           NDI_video_frame_{} {
+ndi_sender::ndi_sender(const int screen_width, const int screen_height, const int max_fps) : pNDI_send_(nullptr),
+                                                                                             NDI_video_frame_{} {
     if (!NDIlib_initialize()) {
         std::cerr << "Error initializing NDI\n";
     }
@@ -25,21 +25,21 @@ NDISender::NDISender(const int screen_width, const int screen_height, const int 
     NDI_video_frame_.frame_rate_D = 1;
 }
 
-NDISender::~NDISender() {
+ndi_sender::~ndi_sender() {
     free(NDI_video_frame_.p_data);
     NDIlib_send_destroy(pNDI_send_);
     NDIlib_destroy();
 }
 
-uint8_t *NDISender::p_video_frame_data() noexcept {
+uint8_t *ndi_sender::p_video_frame_data() noexcept {
     return NDI_video_frame_.p_data;
 }
 
-void NDISender::send_frame() noexcept {
+void ndi_sender::send_frame() noexcept {
     NDIlib_send_send_video_v2(pNDI_send_, &NDI_video_frame_);
 }
 
-void NDISender::resize_screen(const int screen_width, const int screen_height) noexcept {
+void ndi_sender::resize_screen(const int screen_width, const int screen_height) noexcept {
     if (NDI_video_frame_.xres * NDI_video_frame_.yres != screen_height * screen_width) {
         NDI_video_frame_.xres = screen_width;
         NDI_video_frame_.yres = screen_height;
@@ -49,14 +49,14 @@ void NDISender::resize_screen(const int screen_width, const int screen_height) n
     }
 }
 
-void NDISender::set_framerate(const int max_fps) noexcept {
+void ndi_sender::set_framerate(const int max_fps) noexcept {
     NDI_video_frame_.frame_rate_N = max_fps;
 }
 
-int NDISender::width() const noexcept {
+int ndi_sender::width() const noexcept {
     return NDI_video_frame_.xres;
 }
 
-int NDISender::height() const noexcept {
+int ndi_sender::height() const noexcept {
     return NDI_video_frame_.yres;
 }

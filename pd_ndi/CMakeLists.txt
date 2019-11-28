@@ -1,9 +1,9 @@
 project(pd_ndi_main)
 
 set(SRC_FILES
-        NDIBase/NDISender.cpp
-        NDIBase/NDIReceiver.cpp
-        NDIBase/NDISourceFinder.cpp
+        ndi_base/ndi_sender.cpp
+        ndi_base/ndi_receiver.cpp
+        ndi_base/ndi_sourcefinder.cpp
         pd_ndi.cpp
         gl_ndisender.cpp
         gem_ndisender.cpp

@@ -7,7 +7,7 @@
 
 void *ndisourcefinder_new() {
     auto *ndisourcefinder = (t_ndisourcefinder *) pd_new(ndisourcefinder_class);
-    ndisourcefinder->ndi_sourcefinder = new NDISourceFinder();
+    ndisourcefinder->ndi_sourcefinder = new ndi_sourcefinder();
     return static_cast<void *>(ndisourcefinder);
 }
 

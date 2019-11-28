@@ -7,7 +7,7 @@
 
 void *gl_ndisender_new() {
     auto *gl_ndisender = (t_gl_ndisender *) pd_new(gl_ndisender_class);
-    gl_ndisender->ndi_sender = new NDISender(256, 256);
+    gl_ndisender->ndi_sender = new ndi_sender(256, 256);
     return static_cast<void *>(gl_ndisender);
 }
 
