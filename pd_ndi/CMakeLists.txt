@@ -1,4 +1,5 @@
-project(pd_ndi_main)
+cmake_minimum_required(VERSION 3.0)
+project(pd_ndi_lib VERSION 0.5.2)
 
 set(SRC_FILES
         ndi_base/ndi_sender.cpp

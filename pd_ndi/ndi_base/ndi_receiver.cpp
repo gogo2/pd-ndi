@@ -4,17 +4,18 @@
 //
 
 #include <iostream>
+#include <m_pd.h>
 #include "ndi_receiver.hpp"
 
 namespace pdndi { namespace base {
 
     ndi_receiver::ndi_receiver() : source_finder{}, pNDI_recv_(nullptr), NDI_video_frame_{}, NDI_audio_frame_{} {
         if (!NDIlib_initialize()) {
-            std::cerr << "Error initializing NDI\n";
+           error("Error initializing NDI");
         }
         pNDI_recv_ = NDIlib_recv_create_v3();
         if (pNDI_recv_ == nullptr) {
-            std::cerr << "Error initializing NDI receiver\n";
+            error("Error initializing NDI receiver");
         }
     }
 

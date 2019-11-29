@@ -4,17 +4,18 @@
 //
 
 
+#include <m_pd.h>
 #include "ndi_sourcefinder.hpp"
 
 namespace pdndi { namespace base {
 
     ndi_sourcefinder::ndi_sourcefinder() : pNDI_find_(nullptr), no_sources_(0), p_sources_(nullptr) {
         if (!NDIlib_initialize()) {
-            std::cerr << "Error initializing NDI\n";
+            error("Error initializing NDI");
         }
         pNDI_find_ = NDIlib_find_create_v2();
         if (pNDI_find_ == nullptr) {
-            std::cerr << "Error initializing NDI finder\n";
+            error("Error initializing NDI finder");
         }
     }
 
