@@ -23,6 +23,7 @@ elseif (APPLE)
 elseif (UNIx)
     set_target_properties(pd_ndi PROPERTIES SUFFIX ".pd_linux")
 endif ()
+set_target_properties(pd_ndi PROPERTIES CXX_STANDARD 11)
 
 find_package(OpenGL)
 find_package(NDI REQUIRED)
@@ -30,8 +31,6 @@ find_package(PD REQUIRED)
 find_package(Gem REQUIRED)
 
 target_compile_options(pd_ndi PRIVATE $<$<CXX_COMPILER_ID:GNU>:-O3 -pedantic -Wall -Wextra -static-libstdc++>)
-
-set_target_properties(pd_ndi PROPERTIES CXX_STANDARD 11)
 
 target_include_directories(pd_ndi PRIVATE
         ${PROJECT_SOURCE_DIR}/../lib/
@@ -41,7 +40,7 @@ target_include_directories(pd_ndi PRIVATE
         )
 
 target_link_libraries(pd_ndi PRIVATE
-        pd_ndi_glew
+        pd_gem_glew
         ${OPENGL_gl_LIBRARY}
         ${NDI_LIBRARIES}
         ${PD_LIBRARIES}
