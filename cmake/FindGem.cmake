@@ -6,9 +6,21 @@ include(ext/LibFindMacros)
 
 find_package(PD)
 
+if (NOT GEM_EXTERN_DIR)
+    if (WIN32)
+        set(GEM_EXTERN_DIR "$ENV{USERPROFILE}/Documents/Pd/externals/Gem")
+    elseif (APPLE)
+        set(GEM_EXTERN_DIR "/Users/$ENV{USER}/Documents/Pd/externals/Gem")
+    elseif (UNIX)
+        set(GEM_EXTERN_DIR "/usr/include/Gem")
+    endif ()
+endif ()
+
+message(STATUS ff${GEM_EXTERN_DIR})
+
 if (WIN32 OR APPLE)
     set(GEM_BASE_DIR ${GEM_EXTERN_DIR})
-    set(GEM_INCLUDE_BASE_DIR ${GEM_BASE_DIR}/include/Gem)
+    set(GEM_INCLUDE_BASE_DIR "${GEM_BASE_DIR}/include/Gem")
 elseif (UNIX)
     set(GEM_INCLUDE_BASE_DIR ${GEM_EXTERN_DIR})
 endif ()
@@ -17,7 +29,7 @@ find_path(GEM_INCLUDE_DIR
         NAMES
         GemBase.h
         PATHS
-        ${GEM_INCLUDE_BASE_DIR}/Base
+        "${GEM_INCLUDE_BASE_DIR}/Base"
         )
 
 if (WIN32)

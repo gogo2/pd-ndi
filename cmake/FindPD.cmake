@@ -4,6 +4,10 @@
 
 include(ext/LibFindMacros)
 
+if (NOT PD_INSTALL_DIR)
+    message(FATAL_ERROR "Please set PD_INSTALL_DIR variable (installation directory of Pure Data)")
+endif ()
+
 if (WIN32)
     set(PD_BASE_DIR ${PD_INSTALL_DIR})
 elseif (APPLE)
