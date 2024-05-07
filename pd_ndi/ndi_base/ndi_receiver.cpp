@@ -11,11 +11,11 @@ namespace pdndi { namespace base {
 
     ndi_receiver::ndi_receiver() : source_finder{}, pNDI_recv_(nullptr), NDI_video_frame_{}, NDI_audio_frame_{} {
         if (!NDIlib_initialize()) {
-           error("Error initializing NDI");
+           pd_error(nullptr, "Error initializing NDI");
         }
         pNDI_recv_ = NDIlib_recv_create_v3();
         if (pNDI_recv_ == nullptr) {
-            error("Error initializing NDI receiver");
+            pd_error(nullptr, "Error initializing NDI receiver");
         }
     }
 

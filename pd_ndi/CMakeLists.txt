@@ -47,6 +47,6 @@ target_link_libraries(pd_ndi PRIVATE
         ${GEM_LIBRARIES}
         )
 
-
-
-
+get_target_property(pd_ndi_options pd_ndi COMPILE_OPTIONS)
+list(REMOVE_ITEM pd_ndi_options "-pedantic")
+set_property(TARGET pd_ndi PROPERTY COMPILE_OPTIONS ${pd_ndi_options})

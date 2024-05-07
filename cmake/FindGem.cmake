@@ -16,8 +16,6 @@ if (NOT GEM_EXTERN_DIR)
     endif ()
 endif ()
 
-message(STATUS ff${GEM_EXTERN_DIR})
-
 if (WIN32 OR APPLE)
     set(GEM_BASE_DIR ${GEM_EXTERN_DIR})
     set(GEM_INCLUDE_BASE_DIR "${GEM_BASE_DIR}/include/Gem")
@@ -30,15 +28,10 @@ find_path(GEM_INCLUDE_DIR
         GemBase.h
         PATHS
         "${GEM_INCLUDE_BASE_DIR}/Base"
-        )
+)
 
 if (WIN32)
-    find_library(GEM_LIBRARY
-            NAMES
-            Gem
-            PATHS
-            ${GEM_BASE_DIR}
-            )
+    set(GEM_LIBRARY ${GEM_BASE_DIR}/Gem.dll)
 endif ()
 
 get_filename_component(GEM_INCLUDE_DIR ${GEM_INCLUDE_DIR} DIRECTORY)

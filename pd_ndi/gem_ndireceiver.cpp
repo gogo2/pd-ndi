@@ -7,12 +7,8 @@
 #include "gem_ndireceiver.hpp"
 
 namespace pdndi {
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wpedantic"
 
     CPPEXTERN_NEW_WITH_ONE_ARG(ndireceiver, t_floatarg, A_DEFFLOAT);
-
-#pragma GCC diagnostic pop
 
     ndireceiver::ndireceiver() : pix_block_{}, ndi_receiver_{} {
         pix_block_.image.csize = 4;

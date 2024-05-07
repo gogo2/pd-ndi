@@ -11,11 +11,11 @@ namespace pdndi { namespace base {
 
     ndi_sourcefinder::ndi_sourcefinder() : pNDI_find_(nullptr), no_sources_(0), p_sources_(nullptr) {
         if (!NDIlib_initialize()) {
-            error("Error initializing NDI");
+            pd_error(nullptr, "Error initializing NDI");
         }
         pNDI_find_ = NDIlib_find_create_v2();
         if (pNDI_find_ == nullptr) {
-            error("Error initializing NDI finder");
+            pd_error(nullptr, "Error initializing NDI finder");
         }
     }
 

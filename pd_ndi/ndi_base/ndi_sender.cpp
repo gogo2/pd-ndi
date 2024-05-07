@@ -12,11 +12,11 @@ namespace pdndi { namespace base {
     ndi_sender::ndi_sender(const int screen_width, const int screen_height, const int max_fps) : pNDI_send_(nullptr),
                                                                                                  NDI_video_frame_{} {
         if (!NDIlib_initialize()) {
-            error("Error initializing NDI");
+            pd_error(nullptr, "Error initializing NDI");
         }
         pNDI_send_ = NDIlib_send_create();
         if (pNDI_send_ == nullptr) {
-            error("Error initializing NDI sender");
+            pd_error(nullptr, "Error initializing NDI sender");
         }
         NDI_video_frame_.xres = screen_width;
         NDI_video_frame_.yres = screen_height;
